@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export const OperationDateTime = () => {
-  return (
-    <div>OperationDateTime</div>
-  )
-}
+  return <div>OperationDateTime</div>;
+};
