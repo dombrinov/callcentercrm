@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./Score.module.scss"
+import s from "./Score.module.scss";
 
 export const Scores = () => {
   return (

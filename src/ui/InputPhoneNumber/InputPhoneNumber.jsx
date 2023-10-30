@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import s from "./inputPhoneNumber.module.scss";
 import { useRef } from "react";
 import { IMaskInput } from "react-imask";
@@ -34,7 +34,7 @@ export const InputPhoneNumber = () => {
       />
       <span
         className={isActive ? s.input__closer : s.input__closer__active}
-        onClick={() => ref.current.maskRef.value = ""}
+        onClick={() => (ref.current.maskRef.value = "")}
       ></span>
     </div>
   );
