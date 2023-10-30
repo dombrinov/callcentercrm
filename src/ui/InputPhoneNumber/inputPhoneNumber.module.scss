@@ -1,0 +1,52 @@
+.input__phone__number__wrapper {
+  display: flex;
+  cursor: pointer;
+  max-width: 482px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  padding: 0 12px 0 18px;
+}
+.input__phone__number__wrapper__active {
+  display: flex;
+  border-radius: 48px;
+  border: 1px #002CFB solid;
+  max-width: 482px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  padding: 0 12px 0 18px;
+}
+.input__phone__number {
+  width: 100%;
+  max-width: 427px;
+  height: 20px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  border: 0px solid;
+}
+.input__phone__number:focus {
+  outline: none;
+}
+.input_luppa {
+  background: url("./assets/Luppa.svg");
+  width: 16px;
+  height: 16px;
+  margin-right: 12px;
+}
+.input_luppa:hover {
+  background: url("./assets/LuppaAction.svg");
+}
+.input__closer__active {
+  background: url("./assets/InputCloser.svg");
+  width: 24px;
+  height: 24px;
+}
+.input__closer__active:hover {
+  background: url("./assets/InputCloserActive.svg");
+  width: 24px;
+  height: 24px;
+}

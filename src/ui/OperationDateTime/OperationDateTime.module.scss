@@ -1,0 +1,28 @@
+.ui__operation__Date{
+width: 146px;
+height: 14px;
+font-size: 14px;
+font-weight: 400;
+line-height: 14px;
+letter-spacing: 0em;
+text-align: left;
+}
+.ui__operation__Date__arrow{
+  background: url("./assets/arrow_drop_down_black_24dp.svg");
+  width: 24px;
+  height: 24px;
+  cursor: url("./assets/курсор.svg"), pointer;
+}
+.ui__operation__Date__arrow:hover {
+  background: url("./assets/arrow_drop_down_blue.svg"), ;
+  width: 24px;
+  height: 24px;
+  cursor: url("./assets/курсор.svg"), pointer;
+}
+
+.ui__operation__Date__wrapper{
+  max-width: 170px;
+  display: flex;
+  align-items: center;
+  cursor: url("./assets/курсор.svg"), pointer;
+}

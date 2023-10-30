@@ -1,3 +1,7 @@
+// import { InputPhoneNumber } from "../ui/InputPhoneNumber/InputPhoneNumber";
+// import { InputPhoneNumber } from "../ui/InputPhoneNumber/InputPhoneNumber";
+import { OperationDateTime } from "../ui/OperationDateTime/OperationDateTime";
+import { Scores } from "../ui/Scores/Scores";
 import "./styles/global.css";
 
 function App() {
@@ -6,7 +10,10 @@ function App() {
 
   return (
     <>
-      <div>rjwphf</div>
+      <div>rjwphf
+        <OperationDateTime />
+        <Scores />
+      </div>
     </>
   );
 }
