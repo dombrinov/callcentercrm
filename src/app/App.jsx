@@ -1,12 +1,10 @@
+import { Dropdown } from "../ui/Dropdown/Dropdown";
 import "./styles/global.css";
 
 function App() {
-  console.log("kdkdk");
-  console.log("werferwf");
-
   return (
     <>
-      <div>rjwphf</div>
+      <Dropdown />
     </>
   );
 }
