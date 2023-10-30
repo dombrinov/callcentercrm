@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import s from "../Dropdown/Dropdown.module.scss"
+import s from "../Dropdown/Dropdown.module.scss";
 export const DropdownItem = () => {
   const names = [
     {
