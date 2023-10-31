@@ -122,7 +122,7 @@ export const Selector = ({ variant }) => {
         </span>
       </button>
     );
-  } 
+  }
   if (variant === "close") {
     return (
       <button className={s.ui__selector} onClick={handleClick}>
@@ -152,35 +152,35 @@ export const Selector = ({ variant }) => {
       </button>
     );
   }
-    if (variant === "exit") {
-      return (
-        <button className={s.ui__selector} onClick={handleClick}>
-          <span>
-            <svg
-              className={s.ui__selector__question__arrow}
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g id="logout_black_24dp 1" clip-path="url(#clip0_60_3436)">
-                <g id="Group">
-                  <path
-                    id="Vector"
-                    d="M17 8L15.59 9.41L17.17 11H9V13H17.17L15.59 14.58L17 16L21 12L17 8ZM5 5H12V3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H12V19H5V5Z"
-                    fill="#ADBFDF"
-                  />
-                </g>
+  if (variant === "exit") {
+    return (
+      <button className={s.ui__selector} onClick={handleClick}>
+        <span>
+          <svg
+            className={s.ui__selector__question__arrow}
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="logout_black_24dp 1" clip-path="url(#clip0_60_3436)">
+              <g id="Group">
+                <path
+                  id="Vector"
+                  d="M17 8L15.59 9.41L17.17 11H9V13H17.17L15.59 14.58L17 16L21 12L17 8ZM5 5H12V3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H12V19H5V5Z"
+                  fill="#ADBFDF"
+                />
               </g>
-              <defs>
-                <clipPath id="clip0_60_3436">
-                  <rect width="24" height="24" fill="white" />
-                </clipPath>
-              </defs>
-            </svg>
-          </span>
-        </button>
-      );
-    }
+            </g>
+            <defs>
+              <clipPath id="clip0_60_3436">
+                <rect width="24" height="24" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+        </span>
+      </button>
+    );
+  }
 };
