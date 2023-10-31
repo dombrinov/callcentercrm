@@ -1,0 +1,45 @@
+.ui__selector {
+  cursor: url("../../ui/OperationDateTime/assets/курсор.svg"), pointer;
+  background-color: transparent;
+  border: none;
+}
+.ui__selector__question__quest {
+  &:hover circle {
+    fill: #002cfb;
+  }
+  &:active circle {
+    fill: #274bc8;
+  }
+}
+.ui__selector__question__arrow{
+    &:hover path {
+    fill: #002cfb;
+  }
+  &:active path {
+    fill: #274bc8;
+  }
+}
+.unvisible {
+  display: none;
+}
+//   &__active {
+//     display: block;
+//     width: 24px;
+//     height: 24px;
+//     cursor: url("../../ui/OperationDateTime/assets/курсор.svg"), pointer;
+
+// }
+// .ui__selector__question:hover {
+//   width: 24px;
+//   height: 24px;
+//   cursor: url("../../ui/OperationDateTime/assets/курсор.svg"), pointer;
+// }
+// svg {
+//   cursor: url("../../ui/OperationDateTime/assets/курсор.svg"), pointer;
+//   &:hover  circle {
+//   fill: #002CFB;
+//   }
+//   &:active  circle {
+//   fill: #274BC8;
+//   }
+// }
