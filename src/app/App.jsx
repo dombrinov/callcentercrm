@@ -7,11 +7,12 @@ import { InputCheckbox } from "../ui/InputCheckbox/InputCheckbox";
 import { Loading } from "../ui/Loading/Loading";
 import { Scores } from "../ui/Scores/Scores";
 import { Selector } from "../ui/Selector/Selector";
-
 import "./styles/global.css";
 import { ExitMin } from "../ui/ExitMin/ExitMin";
 import { ExitMax } from "../ui/ExitMax/ExitMax";
 import { ButtonMain } from "../ui/ButtonMain/ButtonMain";
+import { BalanceButton } from "../ui/BalanceButton/BalanceButton";
+import { BtnFilter } from "../ui/BtnFilter/BtnFilter";
 
 function App() {
   return (
@@ -35,6 +36,13 @@ function App() {
       <Dropdown variant={"Все сотрудники"} />
       <Dropdown variant={"Все звонки"} />
       <Dropdown variant={"Все ошибки"} />
+      <Dropdown variant={"Все оценки"} />
+      <Dropdown variant={"Период"} />
+      <Dropdown variant={"Все организации"} />
+      <BalanceButton />
+      <BtnFilter text="Сбросить фильтры" />
+      <BtnFilter text="Константин К." />
+        
       <Loading />
       <InputCheckbox />
       <Selector variant="quest" />
@@ -45,6 +53,8 @@ function App() {
       <ExitMin />
       <ExitMax />
       <ButtonMain buttonText="pay__200px">Оплата</ButtonMain>
+
+
     </>
   );
 }
