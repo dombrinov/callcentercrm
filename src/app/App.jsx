@@ -1,4 +1,3 @@
-
 import { Arrows } from "../ui/Arrows/Arrows";
 import { Dots } from "../ui/Dots/Dots";
 import { IconsItems } from "../ui/IconsItems/IconsItems";
@@ -8,14 +7,13 @@ import { InputCheckbox } from "../ui/InputCheckbox/InputCheckbox";
 import { Loading } from "../ui/Loading/Loading";
 import { Scores } from "../ui/Scores/Scores";
 import { Selector } from "../ui/Selector/Selector";
-
 import "./styles/global.css";
-import { Dropdown } from "../ui/Dropdown/Dropdown";
+import { BalanceButton } from "../ui/BalanceButton/BalanceButton";
+import { BtnFilter } from "../ui/BtnFilter/BtnFilter";
 
 function App() {
   return (
     <>
-
       <Arrows variant={"incommingCall"} />
       <Arrows variant={"outgoingCall"} />
       <Dots variant={"Excellent"} />
@@ -35,8 +33,9 @@ function App() {
       <Dropdown variant={"Все сотрудники"} />
       <Dropdown variant={"Все звонки"} />
       <Dropdown variant={"Все ошибки"} />
-
-      <Dropdown />
+      <Dropdown variant={"Все оценки"} />
+      <Dropdown variant={"Период"} />
+      <Dropdown variant={"Все организации"} />
       <Loading />
       <InputCheckbox />
       <Selector variant="quest" />
@@ -44,7 +43,9 @@ function App() {
       <Scores condition="Плохо" />
       <Scores condition="Хорошо" />
       <Scores condition="Отлично" />
-
+      <BalanceButton />
+      <BtnFilter text="Сбросить фильтры" />
+      <BtnFilter text="Константин К." />
     </>
   );
 }
