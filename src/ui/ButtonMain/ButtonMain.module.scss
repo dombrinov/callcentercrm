@@ -1,0 +1,182 @@
+.button__plug__200px__blue{
+  width: 200px;
+height: 48px;
+padding: 11px 25px 13px 25px;
+border-radius: 4px;
+background-color: #005FF8;
+font-family: SFProDisplay;
+font-size: 16px;
+font-weight: 500;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: center;
+border: none;
+color: #fff;
+
+&:hover{
+  background-color: #0024CB;
+}
+&:active{
+  background-color: #274BC8;
+}
+}
+.button__plug__92px__transp{
+width: 92px;
+height: 24px;
+font-family: SFProDisplay;
+font-size: 16px;
+font-weight: 500;
+line-height: 23.6px;
+text-align: center;
+border: none;
+color: #002CFB;
+background-color: #fff;
+&:hover{
+  color: #0024CB;
+}
+&:active{
+  color: #274BC8;
+} 
+}
+.button__plug__80px__transp{
+width: 80px;
+height: 24px;
+font-family: SFProDisplay;
+font-size: 14px;
+font-weight: 500;
+line-height: 23.6px;
+text-align: center;
+border: none;
+color: #002CFB;
+background-color: #fff;
+&:hover{
+  color: #0024CB;
+}
+&:active{
+  color: #274BC8;
+} 
+}
+.button__recognize__122px__blue{
+width: 122px;
+height: 40px;
+padding: 9px 24px 11px 24px;
+border-radius: 4px;
+background-color: #002CFB;
+font-family: SFProDisplay;
+font-size: 14px;
+font-weight: 500;
+line-height: 20px;
+letter-spacing: 0em;
+text-align: center;
+border: none;
+color: #fff;
+
+&:hover{
+  background-color: #0024CB;
+}
+&:active{
+  background-color: #274BC8;
+}
+}
+.button__recognize__122px__white{
+width: 122px;
+height: 40px;
+padding: 9px 24px 11px 24px;
+border-radius: 4px;
+background-color: #fff;
+font-family: SFProDisplay;
+font-size: 14px;
+font-weight: 500;
+line-height: 20px;
+letter-spacing: 0em;
+text-align: center;
+border: #002CFB solid 1px;
+color: #002CFB;
+
+&:hover{
+  background-color: #0024CB;
+  color: #fff;
+}
+&:active{
+  color: #274BC8;
+  background-color: #fff;
+}
+}
+.button__details__200px__white{
+  width: 200px;
+height: 48px;
+padding: 11px 25px 13px 25px;
+border-radius: 4px;
+background-color: #fff;
+font-family: SFProDisplay;
+font-size: 16px;
+font-weight: 500;
+line-height: 23.6px;
+letter-spacing: 0em;
+text-align: center;
+border: #002CFB solid 1px;
+color: #002CFB;
+
+&:hover{
+  background-color: #0024CB;
+  color: #fff;
+}
+&:active{
+  color: #274BC8;
+  background-color: #fff;
+}
+}
+.button__add__200px{
+  display: flex;
+  align-items: center;
+  width: 200px;
+height: 52px;
+padding: 13px 20px 14px 24px;
+border-radius: 4px;
+background-color: #002CFB;
+font-family: SFProDisplay;
+font-size: 16px;
+font-weight: 500;
+line-height: 20px;
+letter-spacing: 0em;
+text-align: left;
+border: none;
+color: #fff;
+
+&:hover{
+  background-color: #0024CB;
+}
+&:active{
+  background-color: #274BC8;
+}
+}
+.button__img__add{
+  padding-left: 17px;
+}
+.button__pay__200px{
+  display: flex;
+  align-items: center;
+  width: 200px;
+height: 52px;
+padding: 11px 20px 11px 65px;
+border-radius: 4px;
+background-color: #002CFB;
+font-family: SFProDisplay;
+font-size: 16px;
+font-weight: 500;
+line-height: 20px;
+letter-spacing: 0em;
+text-align: left;
+border: none;
+color: #fff;
+
+&:hover{
+  background-color: #0024CB;
+}
+&:active{
+  background-color: #274BC8;
+}
+}
+.button__img__pay{
+  padding-left: 31px;
+}

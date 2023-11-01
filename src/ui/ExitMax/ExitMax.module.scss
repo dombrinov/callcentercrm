@@ -1,0 +1,40 @@
+.ui__selector{
+  cursor: url("../../ui/OperationDateTime/assets/курсор.svg"), pointer;
+  background-color: transparent;
+  border: none;
+  padding: 3px 2px;
+}
+.ui__selector__exit{
+    &:hover path {
+    fill: #002cfb;
+  }
+  &:active path {
+    fill: #274bc8;
+  }
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 50px;
+  background-color: #fff;
+  color: #122945;
+  text-align: center;
+  border-radius: 4px;
+  padding: 5px 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: -90%;
+  left: 91%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  border: 1px solid #EAF0FA
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}

@@ -1,17 +1,10 @@
-.ui__selector {
+.ui__selector{
   cursor: url("../../ui/OperationDateTime/assets/курсор.svg"), pointer;
   background-color: transparent;
   border: none;
+  padding: 3px 2px;
 }
-.ui__selector__question__quest {
-  &:hover circle {
-    fill: #002cfb;
-  }
-  &:active circle {
-    fill: #274bc8;
-  }
-}
-.ui__selector__question__arrow{
+.ui__selector__exit{
     &:hover path {
     fill: #002cfb;
   }
@@ -19,7 +12,6 @@
     fill: #274bc8;
   }
 }
-.unvisible {
-  display: none;
+.test {
+color: #002cfb;
 }
-
