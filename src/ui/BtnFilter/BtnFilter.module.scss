@@ -1,0 +1,31 @@
+.dropdownButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #122945;
+  font-family: SFProDisplay;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%; /* 14px */
+  background: none;
+  border: none;
+  padding: 0;
+
+  cursor: pointer;
+  outline: inherit;
+}
+.dropdownButton:hover {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #002cfb;
+  font-family: SFProDisplay;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%; /* 20.72px */
+}
+.dropdownButton:hover path {
+  fill: #002cfb;
+}
