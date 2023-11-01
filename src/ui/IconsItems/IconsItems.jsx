@@ -5,7 +5,7 @@ export const IconsItems = ({ variant }) => {
   switch (variant) {
     case "Alert":
       return (
-        <span >
+        <span>
           <svg
             width="24"
             height="24"
@@ -29,7 +29,7 @@ export const IconsItems = ({ variant }) => {
       );
     case "ArrowDropdown":
       return (
-        <span >
+        <span>
           <svg
             width="24"
             height="24"
@@ -50,7 +50,7 @@ export const IconsItems = ({ variant }) => {
       );
     case "ArrowDropup":
       return (
-        <span >
+        <span>
           <svg
             width="24"
             height="24"
@@ -71,7 +71,7 @@ export const IconsItems = ({ variant }) => {
       );
     case "Exit":
       return (
-        <span >
+        <span>
           <svg
             width="20"
             height="18"
@@ -88,7 +88,7 @@ export const IconsItems = ({ variant }) => {
       );
     case "ExpandDown":
       return (
-        <span >
+        <span>
           <svg
             width="24"
             height="24"
@@ -113,7 +113,7 @@ export const IconsItems = ({ variant }) => {
       );
     case "ExpandUp":
       return (
-        <span >
+        <span>
           <svg
             width="24"
             height="24"
@@ -137,7 +137,7 @@ export const IconsItems = ({ variant }) => {
       );
     case "IMedium":
       return (
-        <span >
+        <span>
           <svg
             width="20"
             height="20"
@@ -155,7 +155,7 @@ export const IconsItems = ({ variant }) => {
       );
     case "ISmall":
       return (
-        <span >
+        <span>
           <svg
             width="20"
             height="20"
@@ -172,7 +172,7 @@ export const IconsItems = ({ variant }) => {
       );
     case "PortretProb":
       return (
-        <span >
+        <span>
           <svg
             width="32"
             height="32"
@@ -190,7 +190,7 @@ export const IconsItems = ({ variant }) => {
       );
     case "Web":
       return (
-        <span >
+        <span>
           <svg
             width="20"
             height="20"

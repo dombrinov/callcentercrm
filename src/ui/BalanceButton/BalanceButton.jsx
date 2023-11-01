@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import s from "./BalanceButton.module.scss"
+import s from "./BalanceButton.module.scss";
 
 export const BalanceButton = () => {
-    const [balance, setBalance] = useState(272);
-      useEffect(() => {
-          setBalance(272);
-      }, []);
+  const [balance, setBalance] = useState(272);
+  useEffect(() => {
+    setBalance(272);
+  }, []);
   return (
     <button className={s.balanceButton}>
       Баланс:<span className={s.spanBalanceButton}>{balance}₽</span>
