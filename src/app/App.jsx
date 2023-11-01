@@ -1,4 +1,3 @@
-
 import { Arrows } from "../ui/Arrows/Arrows";
 import { Dots } from "../ui/Dots/Dots";
 import { IconsItems } from "../ui/IconsItems/IconsItems";
@@ -10,12 +9,13 @@ import { Scores } from "../ui/Scores/Scores";
 import { Selector } from "../ui/Selector/Selector";
 
 import "./styles/global.css";
-import { Dropdown } from "../ui/Dropdown/Dropdown";
+import { ExitMin } from "../ui/ExitMin/ExitMin";
+import { ExitMax } from "../ui/ExitMax/ExitMax";
+import { ButtonMain } from "../ui/ButtonMain/ButtonMain";
 
 function App() {
   return (
     <>
-
       <Arrows variant={"incommingCall"} />
       <Arrows variant={"outgoingCall"} />
       <Dots variant={"Excellent"} />
@@ -35,8 +35,6 @@ function App() {
       <Dropdown variant={"Все сотрудники"} />
       <Dropdown variant={"Все звонки"} />
       <Dropdown variant={"Все ошибки"} />
-
-      <Dropdown />
       <Loading />
       <InputCheckbox />
       <Selector variant="quest" />
@@ -44,7 +42,9 @@ function App() {
       <Scores condition="Плохо" />
       <Scores condition="Хорошо" />
       <Scores condition="Отлично" />
-
+      <ExitMin />
+      <ExitMax />
+      <ButtonMain buttonText="pay__200px">Оплата</ButtonMain>
     </>
   );
 }

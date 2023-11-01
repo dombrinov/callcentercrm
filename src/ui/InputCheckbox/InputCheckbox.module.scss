@@ -1,3 +1,25 @@
-.ui__checkbox::before {
-  border: #ADBFDF;
+.ui__checkbox {
+  opacity: 0;
 } 
+.ui__checkbox__wrapper{
+  width: 16px;
+  height: 16px;
+  background: url("./assets/unchecked — default.svg");
+ border:none;
+ cursor: url("../OperationDateTime/assets/курсор.svg"), pointer;
+}
+.ui__checkbox__wrapper:hover{
+  background: url("./assets/hover.svg") no-repeat;
+   cursor: url("../OperationDateTime/assets/курсор.svg"), pointer;
+}
+.ui__checkbox__wrapper__checked{
+  width: 16px;
+  height: 16px;
+  background: url("./assets/checked\ .svg");
+  border:none;
+   cursor: url("../OperationDateTime/assets/курсор.svg"), pointer;
+}
+.ui__checkbox__wrapper__checked:hover{
+  background: url("./assets/checked — hover.svg") no-repeat;
+   cursor: url("../OperationDateTime/assets/курсор.svg"), pointer;
+}
