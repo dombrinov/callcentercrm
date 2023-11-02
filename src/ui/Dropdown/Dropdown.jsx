@@ -1,19 +1,21 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-key */
+
 import React, { useEffect, useState } from "react";
 import { Avatar } from "../Avatar/Avatar";
 import s from "./Dropdown.module.scss";
-
 import { Scores } from "../Scores/Scores";
 import { Dots } from "../Dots/Dots";
 import { ButtonDate } from "../ButtonDate/ButtonDate";
 import { BtnFilter } from "../BtnFilter/BtnFilter";
+import { useDispatch, useSelector } from "react-redux";
+import { dropHandler } from "../../reduxStore/filterSlice";
 
 export const Dropdown = ({ variant }) => {
-  const [isShowed, setIsShowed] = useState(true);
+  // const [isShowed, setIsShowed] = useState(true);
   const [employeeName, setEmployeeName] = useState("Anna");
   const [orgs, setOrgs] = useState("ООО Грузчиков Сервис Запад");
-
+  const isShowed = useSelector((state) => state.filter.filter.DropdownEmployee);
   useEffect(() => {
     setEmployeeName("John");
   }, []);
@@ -21,8 +23,9 @@ export const Dropdown = ({ variant }) => {
   useEffect(() => {
     setOrgs("ИП Митрофанов М.М.");
   }, []);
+  const dispatch = useDispatch();
 
-  const buttonHandler = (isShowed) => setIsShowed(!isShowed);
+  // const buttonHandler = (isShowed) => setIsShowed(!isShowed);
 
   switch (variant) {
     case "Все сотрудники":
@@ -30,7 +33,7 @@ export const Dropdown = ({ variant }) => {
         <div>
           <BtnFilter
             text="Все сотрудники"
-            buttonHandler={() => buttonHandler(isShowed)}
+            buttonHandler={() => dispatch(dropHandler(isShowed))}
           />
           <div className={isShowed ? s.dropdownlist : s.unvisible}>
             <div className={s.dropdownTitle}>Все сотрудники</div>
@@ -50,7 +53,7 @@ export const Dropdown = ({ variant }) => {
         <div>
           <BtnFilter
             text="Все звонки"
-            buttonHandler={() => buttonHandler(isShowed)}
+            buttonHandler={() => dispatch(dropHandler(isShowed))}
           />
           <div className={isShowed ? s.dropdownlist : s.unvisible}>
             <div className={s.dropdownTitle}>Все звонки</div>
@@ -132,7 +135,7 @@ export const Dropdown = ({ variant }) => {
         <div>
           <BtnFilter
             text="Все ошибки"
-            buttonHandler={() => buttonHandler(isShowed)}
+            buttonHandler={() => dispatch(dropHandler(isShowed))}
           />
           <div className={isShowed ? s.dropdownlist : s.unvisible}>
             <div className={s.dropdownTitle}>Все ошибки</div>
@@ -151,7 +154,7 @@ export const Dropdown = ({ variant }) => {
         <div>
           <BtnFilter
             text="Все оценки"
-            buttonHandler={() => buttonHandler(isShowed)}
+            buttonHandler={() => dispatch(dropHandler(isShowed))}
           />
           <div className={isShowed ? s.dropdownlist : s.unvisible}>
             <div className={s.dropdownTitle}>Все оценки</div>
@@ -170,7 +173,7 @@ export const Dropdown = ({ variant }) => {
       return (
         <div>
           <div>
-            <ButtonDate buttonHandler={() => buttonHandler(isShowed)} />
+            <ButtonDate buttonHandler={() => dispatch(dropHandler(isShowed))} />
           </div>
           <div className={isShowed ? s.dropdownlist : s.unvisible}>
             <div className={s.dropdownTitle}>3 дня</div>
@@ -203,7 +206,7 @@ export const Dropdown = ({ variant }) => {
         <div>
           <BtnFilter
             text="Все организации"
-            buttonHandler={() => buttonHandler(isShowed)}
+            buttonHandler={() => dispatch(dropHandler(isShowed))}
           />
           <div className={isShowed ? s.dropdownlist : s.unvisible}>
             <div className={s.dropdownTitle}>Все организации</div>
