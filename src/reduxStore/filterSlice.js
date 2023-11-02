@@ -4,7 +4,7 @@ const filterSlice = createSlice({
   name: "filter",
   initialState: {
     filter: {
-      DropdownEmployee: { isOpen: false, value: "gl;dfkjgdfil"},
+      DropdownEmployee: { isOpen: false, value: "gl;dfkjgdfil" },
       DropdownCalls: false,
       DropdownErrors: false,
       DropdownScores: false,
