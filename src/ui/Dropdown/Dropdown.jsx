@@ -9,13 +9,33 @@ import { Dots } from "../Dots/Dots";
 import { ButtonDate } from "../ButtonDate/ButtonDate";
 import { BtnFilter } from "../BtnFilter/BtnFilter";
 import { useDispatch, useSelector } from "react-redux";
-import { dropHandler } from "../../reduxStore/filterSlice";
+import {
+  dropErrors,
+  dropHandler,
+  dropCalls,
+  dropScores,
+  dropPeriod,
+  dropOrgs,
+} from "../../reduxStore/filterSlice";
 
 export const Dropdown = ({ variant }) => {
   // const [isShowed, setIsShowed] = useState(true);
   const [employeeName, setEmployeeName] = useState("Anna");
   const [orgs, setOrgs] = useState("ООО Грузчиков Сервис Запад");
   const isShowed = useSelector((state) => state.filter.filter.DropdownEmployee);
+  const dropCallsList = useSelector(
+    (state) => state.filter.filter.DropdownCalls
+  );
+  const dropErrrosList = useSelector(
+    (state) => state.filter.filter.DropdownErrors
+  );
+  const dropScoresList = useSelector(
+    (state) => state.filter.filter.DropdownScores
+  );
+  const dropPeriodList = useSelector(
+    (state) => state.filter.filter.DropdownPeriod
+  );
+  const dropOrgsList = useSelector((state) => state.filter.filter.DropdownOrgs);
   useEffect(() => {
     setEmployeeName("John");
   }, []);
@@ -28,7 +48,7 @@ export const Dropdown = ({ variant }) => {
   // const buttonHandler = (isShowed) => setIsShowed(!isShowed);
 
   switch (variant) {
-    case "Все сотрудники":
+    case "All employee":
       return (
         <div>
           <BtnFilter
@@ -48,14 +68,14 @@ export const Dropdown = ({ variant }) => {
           </div>
         </div>
       );
-    case "Все звонки":
+    case "All calls":
       return (
         <div>
           <BtnFilter
             text="Все звонки"
-            buttonHandler={() => dispatch(dropHandler(isShowed))}
+            buttonHandler={() => dispatch(dropCalls(dropCallsList))}
           />
-          <div className={isShowed ? s.dropdownlist : s.unvisible}>
+          <div className={dropCallsList ? s.dropdownlist : s.unvisible}>
             <div className={s.dropdownTitle}>Все звонки</div>
             <div className={s.dropdownItem}>
               Все клиенты
@@ -130,14 +150,14 @@ export const Dropdown = ({ variant }) => {
           </div>
         </div>
       );
-    case "Все ошибки":
+    case "All errors":
       return (
         <div>
           <BtnFilter
             text="Все ошибки"
-            buttonHandler={() => dispatch(dropHandler(isShowed))}
+            buttonHandler={() => dispatch(dropErrors(dropErrrosList))}
           />
-          <div className={isShowed ? s.dropdownlist : s.unvisible}>
+          <div className={dropErrrosList ? s.dropdownlist : s.unvisible}>
             <div className={s.dropdownTitle}>Все ошибки</div>
             <div className={s.dropdownItem}>Приветствие</div>
             <div className={s.dropdownItem}>Имя</div>
@@ -149,14 +169,14 @@ export const Dropdown = ({ variant }) => {
           </div>
         </div>
       );
-    case "Все оценки":
+    case "All scores":
       return (
         <div>
           <BtnFilter
             text="Все оценки"
-            buttonHandler={() => dispatch(dropHandler(isShowed))}
+            buttonHandler={() => dispatch(dropScores(dropScoresList))}
           />
-          <div className={isShowed ? s.dropdownlist : s.unvisible}>
+          <div className={dropScoresList ? s.dropdownlist : s.unvisible}>
             <div className={s.dropdownTitle}>Все оценки</div>
             <div className={s.dropdownItem}>Распознать</div>
             <div className={s.dropdownItem}>Скрипт не использован</div>
@@ -169,13 +189,15 @@ export const Dropdown = ({ variant }) => {
           </div>
         </div>
       );
-    case "Период":
+    case "Period":
       return (
         <div>
           <div>
-            <ButtonDate buttonHandler={() => dispatch(dropHandler(isShowed))} />
+            <ButtonDate
+              buttonHandler={() => dispatch(dropPeriod(dropPeriodList))}
+            />
           </div>
-          <div className={isShowed ? s.dropdownlist : s.unvisible}>
+          <div className={dropPeriodList ? s.dropdownlist : s.unvisible}>
             <div className={s.dropdownTitle}>3 дня</div>
             <div className={s.dropdownItem}>Неделя</div>
             <div className={s.dropdownItem}>Месяц</div>
@@ -201,14 +223,14 @@ export const Dropdown = ({ variant }) => {
           </div>
         </div>
       );
-    case "Все организации":
+    case "All orgs":
       return (
         <div>
           <BtnFilter
             text="Все организации"
-            buttonHandler={() => dispatch(dropHandler(isShowed))}
+            buttonHandler={() => dispatch(dropOrgs(dropOrgsList))}
           />
-          <div className={isShowed ? s.dropdownlist : s.unvisible}>
+          <div className={dropOrgsList ? s.dropdownlist : s.unvisible}>
             <div className={s.dropdownTitle}>Все организации</div>
             <div className={s.dropdownItem}>{orgs}</div>
             <div className={s.dropdownItem}>{orgs}</div>
