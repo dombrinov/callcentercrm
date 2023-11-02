@@ -33,12 +33,12 @@ function App() {
       <IconsItems variant={"ISmall"} />
       <IconsItems variant={"PortretProb"} />
       <IconsItems variant={"Web"} />
-      <Dropdown variant={"Все сотрудники"} />
-      <Dropdown variant={"Все звонки"} />
-      <Dropdown variant={"Все ошибки"} />
-      <Dropdown variant={"Все оценки"} />
-      <Dropdown variant={"Период"} />
-      <Dropdown variant={"Все организации"} />
+      <Dropdown variant={"All employee"} />
+      <Dropdown variant={"All calls"} />
+      <Dropdown variant={"All errors"} />
+      <Dropdown variant={"All scores"} />
+      <Dropdown variant={"Period"} />
+      <Dropdown variant={"All orgs"} />
       <BalanceButton />
       <BtnFilter text="Сбросить фильтры" />
       <BtnFilter text="Константин К." />
