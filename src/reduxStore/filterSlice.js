@@ -3,11 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 const filterSlice = createSlice({
   name: "filter",
   initialState: {
-      filter: { DropdownEmployee: false, },
+    filter: { DropdownEmployee: false },
   },
   reducers: {
-      dropHandler(state, action) {
-         state.filter.DropdownEmployee = !state.filter.DropdownEmployee;
+    dropHandler(state, action) {
+      state.filter.DropdownEmployee = !state.filter.DropdownEmployee;
     },
   },
 });

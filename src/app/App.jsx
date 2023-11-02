@@ -42,7 +42,7 @@ function App() {
       <BalanceButton />
       <BtnFilter text="Сбросить фильтры" />
       <BtnFilter text="Константин К." />
-        
+
       <Loading />
       <InputCheckbox />
       <Selector variant="quest" />
@@ -53,8 +53,6 @@ function App() {
       <ExitMin />
       <ExitMax />
       <ButtonMain buttonText="pay__200px">Оплата</ButtonMain>
-
-
     </>
   );
 }
