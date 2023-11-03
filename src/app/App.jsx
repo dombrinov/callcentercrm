@@ -13,10 +13,24 @@ import { ExitMax } from "../ui/ExitMax/ExitMax";
 import { ButtonMain } from "../ui/ButtonMain/ButtonMain";
 import { BalanceButton } from "../ui/BalanceButton/BalanceButton";
 import { BtnFilter } from "../ui/BtnFilter/BtnFilter";
+import {
+  useAddProductMutation,
+  usePartnerMutation,
+} from "../reduxStore/ApiSlice.js";
 
 function App() {
+  const [addProduct, { isLoading }] = useAddProductMutation();
+  const handleAddProduct = async () => {
+    const calls = await addProduct({
+      start: "20101011",
+      end: "20241011",
+    });
+    console.log(calls);
+  };
+
   return (
     <>
+      <button onClick={() => handleAddProduct()}>click</button>
       <Arrows variant={"incommingCall"} />
       <Arrows variant={"outgoingCall"} />
       <Dots variant={"Excellent"} />
