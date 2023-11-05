@@ -13,24 +13,28 @@ import { ExitMax } from "../ui/ExitMax/ExitMax";
 import { ButtonMain } from "../ui/ButtonMain/ButtonMain";
 import { BalanceButton } from "../ui/BalanceButton/BalanceButton";
 import { BtnFilter } from "../ui/BtnFilter/BtnFilter";
-import {
-  useAddProductMutation,
-  usePartnerMutation,
-} from "../reduxStore/ApiSlice.js";
+import { useAddProductMutation } from "../reduxStore/ApiSlice.js";
+import { Table } from "../layout/Table/Table";
+import { useEffect, useState } from "react";
+import { TableName } from "../components/TableName";
 
 function App() {
-  const [addProduct, { isLoading }] = useAddProductMutation();
-  const handleAddProduct = async () => {
-    const calls = await addProduct({
-      start: "20101011",
-      end: "20241011",
-    });
-    console.log(calls);
-  };
+  const [addProduct] = useAddProductMutation();
+  const [data, setData] = useState("");
+  useEffect(() => {
+    const getData = async (start, end) => {
+      let data = await addProduct({
+        start: start,
+        end: end,
+      });
+      setData(data);
+    };
+    getData("20101011", "20241011");
+  }, []);
+  console.log(data);
 
   return (
     <>
-      <button onClick={() => handleAddProduct()}>click</button>
       <Arrows variant={"incommingCall"} />
       <Arrows variant={"outgoingCall"} />
       <Dots variant={"Excellent"} />
