@@ -71,7 +71,6 @@ function App() {
       <ExitMin />
       <ExitMax />
       <ButtonMain buttonText="pay__200px">Оплата</ButtonMain>
-
     </>
   );
 }
