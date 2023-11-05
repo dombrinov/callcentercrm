@@ -71,22 +71,7 @@ function App() {
       <ExitMin />
       <ExitMax />
       <ButtonMain buttonText="pay__200px">Оплата</ButtonMain>
-      <TableName>
-        {data?.data?.results?.map((el) => {
-          return (
-            <Table
-              check={<InputCheckbox />}
-              key={el.id}
-              call={el.in_out}
-              date={el.date}
-              avatar={el.person_avatar}
-              number={el.to_number}
-              source={el.source}
-              time={el.time}
-            />
-          );
-        })}
-      </TableName>
+
     </>
   );
 }
