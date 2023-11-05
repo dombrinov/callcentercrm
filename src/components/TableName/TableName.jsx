@@ -24,10 +24,10 @@ export const TableName = ({ children }) => {
               </g>
             </svg>
           </th>
-          <th >Тип</th>
-          <th >Время</th>
-          <th >Сотрудник</th>
-          <th >Звонок</th>
+          <th>Тип</th>
+          <th>Время</th>
+          <th>Сотрудник</th>
+          <th>Звонок</th>
           <th>Источник</th>
           <th>Оценка</th>
           <th>Длительность</th>

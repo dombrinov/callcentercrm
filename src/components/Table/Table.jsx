@@ -3,7 +3,16 @@ import React from "react";
 import s from "./Table.module.scss";
 import { Arrows } from "../../ui/Arrows/Arrows";
 
-export const Table = ({ check, key, call, date, avatar, number, source, time }) => {
+export const Table = ({
+  check,
+  key,
+  call,
+  date,
+  avatar,
+  number,
+  source,
+  time,
+}) => {
   function time_convert(num) {
     var min = Math.floor(num / 60);
     var sec = num % 60;
