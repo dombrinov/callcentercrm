@@ -8,8 +8,27 @@ import { ButtonDate } from "../../ui/ButtonDate/ButtonDate";
 import { Dropdown } from "../../ui/Dropdown/Dropdown";
 import { InputPhoneNumber } from "../../ui/InputPhoneNumber/InputPhoneNumber";
 import GreenBar from "./assets/greenBar.svg";
+import { TableName } from "../../components/TableName/TableName.jsx";
+import { Table } from "../../components/Table/Table";
+import { InputCheckbox } from "../../ui/InputCheckbox/InputCheckbox.jsx";
+import { useAddProductMutation } from "../../reduxStore/ApiSlice.js";
+import { useEffect, useState } from "react";
 
 export const Calls = () => {
+  const [addProduct] = useAddProductMutation();
+  const [data, setData] = useState("");
+
+  useEffect(() => {
+    const getData = async (start, end) => {
+      let data = await addProduct({
+        start: start,
+        end: end,
+      });
+      setData(data);
+    };
+    getData("20101011", "20241011");
+  }, []);
+  console.log(data);
   return (
     <Layout>
       <Navigation />
@@ -56,6 +75,24 @@ export const Calls = () => {
               <Dropdown variant={"All errors"} />
               <Dropdown variant={"All scores"} />
             </div>
+          </div>
+          <div>
+            <TableName>
+              {data?.data?.results?.map((el) => {
+                return (
+                  <Table
+                    check={<InputCheckbox />}
+                    key={el.id}
+                    call={el.in_out}
+                    date={el.date}
+                    avatar={el.person_avatar}
+                    number={el.to_number}
+                    source={el.source}
+                    time={el.time}
+                  />
+                );
+              })}
+            </TableName>
           </div>
         </div>
       </div>

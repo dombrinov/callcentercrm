@@ -80,8 +80,8 @@ export const Navigation = () => {
           </div>
         );
       })}
-      <ButtonMain buttonText={"plug__200px__blue"}>Добавить заказ</ButtonMain>
-      <ButtonMain buttonText={"plug__200px__blue"}>Оплата</ButtonMain>
+      <ButtonMain buttonText="add__200px">Добавить заказ</ButtonMain>
+      <ButtonMain buttonText="pay__200px">Оплата</ButtonMain>
     </div>
   );
 };

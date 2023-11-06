@@ -1,6 +1,4 @@
 import "./styles/global.css";
-import { useAddProductMutation } from "../reduxStore/ApiSlice.js";
-import { useEffect, useState } from "react";
 import { RouterProvider, createHashRouter } from "react-router-dom";
 import { Totals } from "../pages/Totals/Totals";
 import { Orders } from "../pages/Orders/Orders";
@@ -61,21 +59,6 @@ function App() {
       element: <NotFound />,
     },
   ]);
-
-  const [addProduct] = useAddProductMutation();
-  const [data, setData] = useState("");
-
-  useEffect(() => {
-    const getData = async (start, end) => {
-      let data = await addProduct({
-        start: start,
-        end: end,
-      });
-      setData(data);
-    };
-    getData("20101011", "20241011");
-  }, []);
-  console.log(data);
 
   return <RouterProvider router={router} />;
 }
