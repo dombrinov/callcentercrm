@@ -18,7 +18,7 @@ export const Calls = () => {
           <p className={s.dayDate}>Среда, 13 окт.</p>
           <div className={s.flexBar}>
             <p className={s.headerText}>
-              Новые звонки 
+              Новые звонки
               <span className={s.headerSpanCalls}> 20 из 30 шт.</span>
             </p>
             <img src={GreenBar} alt="" />
