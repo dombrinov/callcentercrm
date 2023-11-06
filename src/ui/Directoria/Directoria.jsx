@@ -4,7 +4,7 @@ export const Directoria = () => {
   return (
     <div>
       <div>
-        <h3>Упоров Кирилл</h3>
+        <h3>Упоров</h3>
         <p>
           Директор<span></span>Санкт-Петербург
         </p>

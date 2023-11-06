@@ -237,5 +237,29 @@ export const Dropdown = ({ variant }) => {
           </div>
         </div>
       );
+    case "All types":
+      return (
+        <div>
+          <BtnFilter
+            text="Все типы"
+            buttonHandler={() => dispatch(dropOrgs(dropOrgsList))}
+          />
+          <div className={dropOrgsList ? s.dropdownlist : s.unvisible}>
+            <div className={s.dropdownTitle}>Все типы</div>
+          </div>
+        </div>
+      );
+    case "All sources":
+      return (
+        <div>
+          <BtnFilter
+            text="Все источники"
+            buttonHandler={() => dispatch(dropOrgs(dropOrgsList))}
+          />
+          <div className={dropOrgsList ? s.dropdownlist : s.unvisible}>
+            <div className={s.dropdownTitle}>Все источники</div>
+          </div>
+        </div>
+      );
   }
 };

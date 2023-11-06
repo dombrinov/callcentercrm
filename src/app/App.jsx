@@ -1,26 +1,70 @@
-import { Arrows } from "../ui/Arrows/Arrows";
-import { Dots } from "../ui/Dots/Dots";
-import { IconsItems } from "../ui/IconsItems/IconsItems";
-import { Avatar } from "../ui/Avatar/Avatar";
-import { Dropdown } from "../ui/Dropdown/Dropdown";
-import { InputCheckbox } from "../ui/InputCheckbox/InputCheckbox";
-import { Loading } from "../ui/Loading/Loading";
-import { Scores } from "../ui/Scores/Scores";
-import { Selector } from "../ui/Selector/Selector";
 import "./styles/global.css";
-import { ExitMin } from "../ui/ExitMin/ExitMin";
-import { ExitMax } from "../ui/ExitMax/ExitMax";
-import { ButtonMain } from "../ui/ButtonMain/ButtonMain";
-import { BalanceButton } from "../ui/BalanceButton/BalanceButton";
-import { BtnFilter } from "../ui/BtnFilter/BtnFilter";
 import { useAddProductMutation } from "../reduxStore/ApiSlice.js";
-import { Table } from "../layout/Table/Table";
 import { useEffect, useState } from "react";
-import { TableName } from "../components/TableName";
+import { RouterProvider, createHashRouter } from "react-router-dom";
+import { Totals } from "../pages/Totals/Totals";
+import { Orders } from "../pages/Orders/Orders";
+import { Messages } from "../pages/Messages/Messages";
+import { Calls } from "../pages/Calls/Calls";
+import { Partners } from "../pages/Partners/Partners";
+import { Documents } from "../pages/Documents/Documents";
+import { Employees } from "../pages/Employees/Employees";
+import { Reports } from "../pages/Reports/Reports";
+import { Data } from "../pages/Data/Data";
+import { Settings } from "../pages/Settings/Settings";
+import { NotFound } from "../pages/NotFound/NotFound";
 
 function App() {
+  const router = createHashRouter([
+    {
+      path: "/",
+      element: <Totals />,
+    },
+    {
+      path: "/orders",
+      element: <Orders />,
+    },
+    {
+      path: "/messages",
+      element: <Messages />,
+    },
+    {
+      path: "/calls",
+      element: <Calls />,
+    },
+    {
+      path: "/partners",
+      element: <Partners />,
+    },
+    {
+      path: "/documents",
+      element: <Documents />,
+    },
+    {
+      path: "/employees",
+      element: <Employees />,
+    },
+    {
+      path: "/reports",
+      element: <Reports />,
+    },
+    {
+      path: "/data",
+      element: <Data />,
+    },
+    {
+      path: "/settings",
+      element: <Settings />,
+    },
+    {
+      path: "*",
+      element: <NotFound />,
+    },
+  ]);
+
   const [addProduct] = useAddProductMutation();
   const [data, setData] = useState("");
+
   useEffect(() => {
     const getData = async (start, end) => {
       let data = await addProduct({
@@ -33,46 +77,6 @@ function App() {
   }, []);
   console.log(data);
 
-  return (
-    <>
-      <Arrows variant={"incommingCall"} />
-      <Arrows variant={"outgoingCall"} />
-      <Dots variant={"Excellent"} />
-      <Dots variant={"Good"} />
-      <Dots variant={"Bad"} />
-      <Avatar src={"https://lk.skilla.ru/img/noavatar.jpg"} />
-      <IconsItems variant={"Alert"} />
-      <IconsItems variant={"ArrowDropdown"} />
-      <IconsItems variant={"ArrowDropup"} />
-      <IconsItems variant={"Exit"} />
-      <IconsItems variant={"ExpandDown"} />
-      <IconsItems variant={"ExpandUp"} />
-      <IconsItems variant={"IMedium"} />
-      <IconsItems variant={"ISmall"} />
-      <IconsItems variant={"PortretProb"} />
-      <IconsItems variant={"Web"} />
-      <Dropdown variant={"All employee"} />
-      <Dropdown variant={"All calls"} />
-      <Dropdown variant={"All errors"} />
-      <Dropdown variant={"All scores"} />
-      <Dropdown variant={"Period"} />
-      <Dropdown variant={"All orgs"} />
-      <BalanceButton />
-      <BtnFilter text="Сбросить фильтры" />
-      <BtnFilter text="Константин К." />
-
-      <Loading />
-      <InputCheckbox />
-      <Selector variant="quest" />
-      <Selector variant="questMax" />
-      <Scores condition="Плохо" />
-      <Scores condition="Хорошо" />
-      <Scores condition="Отлично" />
-      <ExitMin />
-      <ExitMax />
-      <ButtonMain buttonText="pay__200px">Оплата</ButtonMain>
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
-
 export default App;
