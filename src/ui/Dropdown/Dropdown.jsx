@@ -24,16 +24,16 @@ export const Dropdown = ({ variant }) => {
   const [orgs, setOrgs] = useState("ООО Грузчиков Сервис Запад");
   const isShowed = useSelector((state) => state.filter.filter.DropdownEmployee);
   const dropCallsList = useSelector(
-    (state) => state.filter.filter.DropdownCalls,
+    (state) => state.filter.filter.DropdownCalls
   );
   const dropErrrosList = useSelector(
-    (state) => state.filter.filter.DropdownErrors,
+    (state) => state.filter.filter.DropdownErrors
   );
   const dropScoresList = useSelector(
-    (state) => state.filter.filter.DropdownScores,
+    (state) => state.filter.filter.DropdownScores
   );
   const dropPeriodList = useSelector(
-    (state) => state.filter.filter.DropdownPeriod,
+    (state) => state.filter.filter.DropdownPeriod
   );
   const dropOrgsList = useSelector((state) => state.filter.filter.DropdownOrgs);
   useEffect(() => {
@@ -234,6 +234,30 @@ export const Dropdown = ({ variant }) => {
             <div className={s.dropdownTitle}>Все организации</div>
             <div className={s.dropdownItem}>{orgs}</div>
             <div className={s.dropdownItem}>{orgs}</div>
+          </div>
+        </div>
+      );
+    case "All types":
+      return (
+        <div>
+          <BtnFilter
+            text="Все типы"
+            buttonHandler={() => dispatch(dropOrgs(dropOrgsList))}
+          />
+          <div className={dropOrgsList ? s.dropdownlist : s.unvisible}>
+            <div className={s.dropdownTitle}>Все типы</div>
+          </div>
+        </div>
+      );
+    case "All sources":
+      return (
+        <div>
+          <BtnFilter
+            text="Все источники"
+            buttonHandler={() => dispatch(dropOrgs(dropOrgsList))}
+          />
+          <div className={dropOrgsList ? s.dropdownlist : s.unvisible}>
+            <div className={s.dropdownTitle}>Все источники</div>
           </div>
         </div>
       );
