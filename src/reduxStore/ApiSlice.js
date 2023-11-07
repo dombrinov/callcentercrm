@@ -6,7 +6,9 @@ export const partnershipApi = createApi({
   endpoints: (build) => ({
     addProduct: build.mutation({
       query: ({ start, end }) => ({
-        url: `/mango/getList?date_start=${start}&date_end=${end}&limit=1000`,
+
+        url: `/mango/getList?date_start=${start}&date_end=${end}&limit=${1000}`,
+
         method: "POST",
         headers: {
           Authorization: "Bearer testtoken",
@@ -17,4 +19,4 @@ export const partnershipApi = createApi({
   }),
 });
 
-export const { useAddProductMutation, usePartnerMutation } = partnershipApi;
+export const { useAddProductMutation } = partnershipApi;

@@ -29,6 +29,7 @@ export const Calls = () => {
     getData("20101011", "20241011");
   }, []);
   console.log(data);
+
   return (
     <Layout>
       <Navigation />
