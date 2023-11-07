@@ -6,9 +6,10 @@ export const TableName = ({ children }) => {
   return (
     <table className={s.tableDiv}>
       <thead className={s.table__head}>
-        <tr className={s.table__head}>
+        <tr>
           <th>
             <svg
+              className={s.table__head__check}
               width="16"
               height="16"
               viewBox="0 0 16 16"
@@ -24,13 +25,13 @@ export const TableName = ({ children }) => {
               </g>
             </svg>
           </th>
-          <th>Тип</th>
-          <th>Время</th>
-          <th>Сотрудник</th>
-          <th>Звонок</th>
-          <th>Источник</th>
-          <th>Оценка</th>
-          <th>Длительность</th>
+          <th className={s.table__head__type}>Тип</th>
+          <th className={s.table__head__date}>Время</th>
+          <th className={s.table__head__avatar}>Сотрудник</th>
+          <th className={s.table__head__call}>Звонок</th>
+          <th className={s.table__head__source}>Источник</th>
+          <th className={s.table__head__score}>Оценка</th>
+          <th className={s.table__head__time}>Длительность</th>
         </tr>
       </thead>
       <tbody>{children}</tbody>

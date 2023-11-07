@@ -8,8 +8,36 @@
   text-align: right;
   color: #899CB1;
   display: flex;
+  padding: 24px 40px 20px 12px;
+  background: #fff;
+  display: flex;
 }
+.table__head__{
+&check{
+padding-right: 12px;
+}
+&type{
+  padding-right: 30px;
+}
+&date{
+  padding-right: 41px;
+}
+&avatar{
+  padding-right: 60px;
+}
+&call{
+  padding-right: 195px;
+}
+&source{
+  padding-right: 154px;
+}
+&score{
+  padding-right: 414px;
+}
+
 
 .tableDiv{
   z-index: 0;
+=======
+
 }
