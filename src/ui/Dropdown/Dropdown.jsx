@@ -55,7 +55,7 @@ export const Dropdown = ({ variant }) => {
             text="Все сотрудники"
             buttonHandler={() => dispatch(dropHandler(isShowed))}
           />
-          <div className={isShowed ? s.dropdownlist : s.unvisible}>
+          <div className={isShowed ? s.dropdownList : s.unvisible}>
             <div className={s.dropdownTitle}>Все сотрудники</div>
             <div className={s.dropdownItem}>
               <Avatar src={"https://lk.skilla.ru/img/noavatar.jpg"} />
@@ -70,12 +70,12 @@ export const Dropdown = ({ variant }) => {
       );
     case "All calls":
       return (
-        <div>
+        <div className={s.dropdownFilterCalls}>
           <BtnFilter
             text="Все звонки"
             buttonHandler={() => dispatch(dropCalls(dropCallsList))}
           />
-          <div className={dropCallsList ? s.dropdownlist : s.unvisible}>
+          <div className={dropCallsList ? s.dropdownList : s.unvisible}>
             <div className={s.dropdownTitle}>Все звонки</div>
             <div className={s.dropdownItem}>
               Все клиенты
@@ -157,7 +157,7 @@ export const Dropdown = ({ variant }) => {
             text="Все ошибки"
             buttonHandler={() => dispatch(dropErrors(dropErrrosList))}
           />
-          <div className={dropErrrosList ? s.dropdownlist : s.unvisible}>
+          <div className={dropErrrosList ? s.dropdownList : s.unvisible}>
             <div className={s.dropdownTitle}>Все ошибки</div>
             <div className={s.dropdownItem}>Приветствие</div>
             <div className={s.dropdownItem}>Имя</div>
@@ -197,7 +197,7 @@ export const Dropdown = ({ variant }) => {
               buttonHandler={() => dispatch(dropPeriod(dropPeriodList))}
             />
           </div>
-          <div className={dropPeriodList ? s.dropdownlist : s.unvisible}>
+          <div className={dropPeriodList ? s.dropdownList : s.unvisible}>
             <div className={s.dropdownTitle}>3 дня</div>
             <div className={s.dropdownItem}>Неделя</div>
             <div className={s.dropdownItem}>Месяц</div>
@@ -230,7 +230,7 @@ export const Dropdown = ({ variant }) => {
             text="Все организации"
             buttonHandler={() => dispatch(dropOrgs(dropOrgsList))}
           />
-          <div className={dropOrgsList ? s.dropdownlist : s.unvisible}>
+          <div className={dropOrgsList ? s.dropdownList : s.unvisible}>
             <div className={s.dropdownTitle}>Все организации</div>
             <div className={s.dropdownItem}>{orgs}</div>
             <div className={s.dropdownItem}>{orgs}</div>
@@ -244,7 +244,7 @@ export const Dropdown = ({ variant }) => {
             text="Все типы"
             buttonHandler={() => dispatch(dropOrgs(dropOrgsList))}
           />
-          <div className={dropOrgsList ? s.dropdownlist : s.unvisible}>
+          <div className={dropOrgsList ? s.dropdownList : s.unvisible}>
             <div className={s.dropdownTitle}>Все типы</div>
           </div>
         </div>
@@ -256,7 +256,7 @@ export const Dropdown = ({ variant }) => {
             text="Все источники"
             buttonHandler={() => dispatch(dropOrgs(dropOrgsList))}
           />
-          <div className={dropOrgsList ? s.dropdownlist : s.unvisible}>
+          <div className={dropOrgsList ? s.dropdownList : s.unvisible}>
             <div className={s.dropdownTitle}>Все источники</div>
           </div>
         </div>

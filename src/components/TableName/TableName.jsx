@@ -4,7 +4,7 @@ import s from "./TableName.module.scss";
 
 export const TableName = ({ children }) => {
   return (
-    <table>
+    <table className={s.tableDiv}>
       <thead className={s.table__head}>
         <tr className={s.table__head}>
           <th>
