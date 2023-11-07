@@ -16,9 +16,10 @@ export const InputPhoneNumber = () => {
     <div
       className={
         isActive
-          ? s.input__phone__number__wrapper
-          : s.input__phone__number__wrapper__active
+          ? s.input__phone__number__wrapper__active
+          : s.input__phone__number__wrapper
       }
+      onClick={handleClick}
     >
       <span className={s.input_luppa}></span>
       <IMaskInput
@@ -30,10 +31,11 @@ export const InputPhoneNumber = () => {
         onAccept={(value) => console.log(value)}
         placeholder="Поиск по звонкам"
         className={s.input__phone__number}
-        onClick={handleClick}
+        
+      
       />
       <span
-        className={isActive ? s.input__closer : s.input__closer__active}
+        className={isActive ? s.input__closer__active:s.input__closer  }
         onClick={() => (ref.current.maskRef.value = "")}
       ></span>
     </div>

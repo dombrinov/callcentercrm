@@ -81,7 +81,6 @@ export const Calls = () => {
               {data?.data?.results?.map((el) => {
                 return (
                   <Table
-                    check={<InputCheckbox />}
                     key={el.id}
                     call={el.in_out}
                     date={el.date}

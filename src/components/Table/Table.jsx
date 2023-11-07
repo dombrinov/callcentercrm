@@ -2,6 +2,9 @@
 import React from "react";
 import s from "./Table.module.scss";
 import { Arrows } from "../../ui/Arrows/Arrows";
+import { Dots } from "../../ui/Dots/Dots";
+import { Scores } from "../../ui/Scores/Scores";
+import { InputCheckbox } from "../../ui/InputCheckbox/InputCheckbox";
 
 export const Table = ({
   check,
@@ -24,7 +27,10 @@ export const Table = ({
 
   return (
     <tr key={key} className={s.table__rows}>
-      <td className={s.table__check}>{check}</td>
+      <td className={s.table__check}>
+        {" "}
+        <InputCheckbox />
+      </td>
       <td className={s.arrow}>
         {call === 1 ? (
           <Arrows variant={"incommingCall"} />
@@ -33,13 +39,15 @@ export const Table = ({
         )}
       </td>
       <td className={s.table__date}>{date.slice(11, 16)}</td>
-      <td>
-        <img className={s.table__avatar} src={avatar} alt="" />
+      <td className={s.table__avatar}>
+        <img className={s.table__avatar__img} src={avatar} alt="" />
       </td>
-      <td>{"+" + number}</td>
-      <td>{source}</td>
-      <td>ocenka</td>
-      <td>{time_convert(time)}</td>
+      <td className={s.table__number}>{"+" + number}</td>
+      <td className={s.table__source}>{source ==="" ? "Rabota.ru" : source}</td>
+      <td className={s.table__point}>
+        <Dots variant="Excellent" /> <Scores condition="Отлично" />{" "}
+      </td>
+      <td className={s.table__time}>{time_convert(time)}</td>
     </tr>
   );
 };
