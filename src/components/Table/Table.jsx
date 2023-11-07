@@ -43,7 +43,9 @@ export const Table = ({
         <img className={s.table__avatar__img} src={avatar} alt="" />
       </td>
       <td className={s.table__number}>{"+" + number}</td>
-      <td className={s.table__source}>{source ==="" ? "Rabota.ru" : source}</td>
+      <td className={s.table__source}>
+        {source === "" ? "Rabota.ru" : source}
+      </td>
       <td className={s.table__point}>
         <Dots variant="Excellent" /> <Scores condition="Отлично" />{" "}
       </td>

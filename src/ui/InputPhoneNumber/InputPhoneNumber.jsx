@@ -31,11 +31,9 @@ export const InputPhoneNumber = () => {
         onAccept={(value) => console.log(value)}
         placeholder="Поиск по звонкам"
         className={s.input__phone__number}
-        
-      
       />
       <span
-        className={isActive ? s.input__closer__active:s.input__closer  }
+        className={isActive ? s.input__closer__active : s.input__closer}
         onClick={() => (ref.current.maskRef.value = "")}
       ></span>
     </div>

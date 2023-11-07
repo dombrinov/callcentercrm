@@ -6,7 +6,7 @@ export const TableName = ({ children }) => {
   return (
     <table>
       <thead className={s.table__head}>
-        <tr >
+        <tr>
           <th>
             <svg
               className={s.table__head__check}
