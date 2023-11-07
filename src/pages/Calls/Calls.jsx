@@ -11,10 +11,7 @@ import GreenBar from "./assets/greenBar.svg";
 import { TableName } from "../../components/TableName/TableName.jsx";
 import { Table } from "../../components/Table/Table";
 import { InputCheckbox } from "../../ui/InputCheckbox/InputCheckbox.jsx";
-import {
-  useAddProductMutation,
- 
-} from "../../reduxStore/ApiSlice.js";
+import { useAddProductMutation } from "../../reduxStore/ApiSlice.js";
 import { useEffect, useState } from "react";
 
 export const Calls = () => {
