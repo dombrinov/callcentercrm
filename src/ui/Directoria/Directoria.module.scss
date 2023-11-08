@@ -1,0 +1,59 @@
+.directoria__wrapper {
+  width: 368px;
+  border: 1px solid #eaf0fa;
+  position: absolute;
+  top: 63px;
+  right: 293px;
+  background: #fff;
+  box-shadow: 4px 16px 50px #8187a33d;
+  border-radius: 4px;
+  padding: 20px 29px 20px 32px;
+  font-family: SFProDisplay;
+  font-size: 15px;
+  font-weight: 400;
+  color: #5e7793;
+}
+
+.directoria {
+  &__img {
+    width: 32px;
+    height: 32px;
+  }
+  &__mail__img {
+    padding-right: 10px;
+  }
+  &__phone__img {
+    padding-right: 10px;
+  }
+  &__dot__img {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  &__boss {
+    font-size: 18px;
+    color: #122945;
+    font-weight: 500;
+    padding: 0px;
+  }
+  &__top__info {
+    padding-bottom: 16px;
+    border-bottom: 1px solid #eaf0fa;
+  }
+  &__dot {
+    padding-top: 6px;
+  }
+}
+
+.directoria__list > li {
+  list-style: none;
+  color: #005ff8;
+  padding-top: 16px;
+  display: flex;
+  align-items: center;
+}
+li > img{
+  padding-right: 12px;
+}
+.directoria__list {
+  padding-top: 24px;
+}
