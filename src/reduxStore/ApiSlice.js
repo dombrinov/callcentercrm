@@ -6,7 +6,9 @@ export const partnershipApi = createApi({
   endpoints: (build) => ({
     addProduct: build.mutation({
       query: ({ start, end }) => ({
-        url: `/mango/getList?date_start=${start}&date_end=${end}&limit=${10}`,
+
+        url: `/mango/getList?date_start=${start}&date_end=${end}&limit=${1000}`,
+
 
         method: "POST",
         headers: {
