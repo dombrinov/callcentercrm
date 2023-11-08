@@ -1,58 +1,18 @@
 /* eslint-disable react/no-unknown-property */
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+
 import s from "./ButtonDate.module.scss";
 
-export const ButtonDate = ({ buttonHandler }) => {
-  const [filterPeriod, setFilterPeriod] = useState("3 дня");
-
-  const togglePeriodRight = (filterPeriod) => {
-    switch (filterPeriod) {
-      case "3 дня":
-        setFilterPeriod("Неделя");
-        break;
-      case "Неделя":
-        setFilterPeriod("Месяц");
-        break;
-      case "Месяц":
-        setFilterPeriod("Год");
-        break;
-      case "Год":
-        setFilterPeriod("3 дня");
-        break;
-      default:
-        setFilterPeriod("3 дня");
-
-        return filterPeriod;
-    }
-  };
-  const togglePeriodLeft = (filterPeriod) => {
-    switch (filterPeriod) {
-      case "3 дня":
-        setFilterPeriod("Год");
-        break;
-      case "Год":
-        setFilterPeriod("Месяц");
-        break;
-      case "Месяц":
-        setFilterPeriod("Неделя");
-        break;
-      case "Неделя":
-        setFilterPeriod("3 дня");
-        break;
-      default:
-        setFilterPeriod("3 дня");
-
-        return filterPeriod;
-    }
-  };
+export const ButtonDate = ({
+  buttonHandler,
+  togglePeriodLeft,
+  togglePeriodRight,
+  filterPeriod,
+}) => {
   return (
     <>
       <div className={s.calendarFlex}>
-        <div
-          className={s.svgArrow}
-          onClick={() => togglePeriodLeft(filterPeriod)}
-        >
+        <div className={s.svgArrow} onClick={togglePeriodLeft}>
           <svg
             width="16"
             height="24"
@@ -90,10 +50,7 @@ export const ButtonDate = ({ buttonHandler }) => {
           </div>
           {filterPeriod}
         </div>
-        <div
-          className={s.svgArrow}
-          onClick={() => togglePeriodRight(filterPeriod)}
-        >
+        <div className={s.svgArrow} onClick={togglePeriodRight}>
           <svg
             width="17"
             height="24"

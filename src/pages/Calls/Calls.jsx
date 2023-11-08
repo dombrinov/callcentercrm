@@ -12,11 +12,20 @@ import { Table } from "../../components/Table/Table";
 import { useAddProductMutation } from "../../reduxStore/ApiSlice.js";
 import { useEffect, useState } from "react";
 import { DirectoriaDropButton } from "../../ui/DirectoriaDropButton/DirectoriaDropButton";
+import { useDispatch, useSelector } from "react-redux";
+import { dropTypes } from "../../reduxStore/filterSlice.js";
 
 export const Calls = () => {
   const [addProduct] = useAddProductMutation();
   const [data, setData] = useState([]);
+  const [calls, setCalls] = useState(3);
+  const [title, setTitle] = useState("Все типы");
+  const dropTypesList = useSelector(
+    (state) => state.filter.filter.DropdownTypes.isOpened,
+  );
 
+  const [now, setNow] = useState(new Date().toISOString());
+  console.log(now);
   useEffect(() => {
     const getData = async (start, end) => {
       let data = await addProduct({
@@ -27,16 +36,61 @@ export const Calls = () => {
     };
     getData("20101011", "20241011");
   }, []);
-
-  const showIncommingCalls = (type) => {
-    let calls = data.filter((el) => (el.in_out === type ? el : false));
-    setData(calls);
+  const dispatch = useDispatch();
+  const showCalls = (type, text) => {
+    setCalls(type);
+    setTitle(text);
+    dispatch(dropTypes(dropTypesList));
   };
 
   const [searcher, setSearcher] = useState("");
   const inputSearcher = (e) => setSearcher(e.target.value);
 
   console.log(data);
+
+  const [filterPeriod, setFilterPeriod] = useState("3 дня");
+
+  const togglePeriodRight = (filterPeriod) => {
+    switch (filterPeriod) {
+      case "3 дня":
+        setFilterPeriod("Неделя");
+        break;
+      case "Неделя":
+        setFilterPeriod("Месяц");
+        break;
+      case "Месяц":
+        setFilterPeriod("Год");
+        break;
+      case "Год":
+        setFilterPeriod("3 дня");
+        break;
+      default:
+        setFilterPeriod("3 дня");
+
+        return filterPeriod;
+    }
+  };
+  const togglePeriodLeft = (filterPeriod) => {
+    switch (filterPeriod) {
+      case "3 дня":
+        setFilterPeriod("Год");
+        break;
+      case "Год":
+        setFilterPeriod("Месяц");
+        break;
+      case "Месяц":
+        setFilterPeriod("Неделя");
+        break;
+      case "Неделя":
+        setFilterPeriod("3 дня");
+        break;
+      default:
+        setFilterPeriod("3 дня");
+
+        return filterPeriod;
+    }
+  };
+
   return (
     <Layout>
       <Navigation />
@@ -71,7 +125,11 @@ export const Calls = () => {
           <div className={s.calls}>
             <div className={s.callsButton}>
               <BalanceButton />
-              <ButtonDate />
+              <ButtonDate
+                togglePeriodRight={() => togglePeriodRight(filterPeriod)}
+                togglePeriodLeft={() => togglePeriodLeft(filterPeriod)}
+                filterPeriod={filterPeriod}
+              />
             </div>
             <div className={s.filtersAndInput}>
               <div>
@@ -83,7 +141,11 @@ export const Calls = () => {
               <div className={s.callsButton}>
                 <Dropdown
                   variant={"All types"}
+                  showCalls={showCalls}
+                  title={title}
+                  dropTypesList={dropTypesList}
                   showIncommingCalls={showIncommingCalls}
+
                 />
                 <Dropdown variant={"All employee"} />
                 <Dropdown variant={"All calls"} />
@@ -92,7 +154,6 @@ export const Calls = () => {
                 <Dropdown variant={"All scores"} />
               </div>
             </div>
-
             <TableName>
               {data
                 .filter((el) =>
@@ -101,8 +162,9 @@ export const Calls = () => {
                     : el.to_number.includes(
                         searcher.slice(1, 2) + searcher.slice(3, 7),
                       ),
-                )
-                .map((el) => {
+                ).filter((item) =>
+                    calls === 3 ? item : item.in_out === calls,
+                  ).map((el) => {
                   return (
                     <Table
                       key={el.id}
@@ -116,7 +178,6 @@ export const Calls = () => {
                   );
                 })}
             </TableName>
-          </div>
         </div>
       </div>
     </Layout>
