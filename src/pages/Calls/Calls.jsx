@@ -92,30 +92,30 @@ export const Calls = () => {
                 <Dropdown variant={"All scores"} />
               </div>
             </div>
-            
-              <TableName>
-                {data
-                  .filter((el) =>
-                    searcher === ""
-                      ? el
-                      : el.to_number.includes(
-                          searcher.slice(1, 2) + searcher.slice(3, 7)
-                        )
-                  )
-                  .map((el) => {
-                    return (
-                      <Table
-                        key={el.id}
-                        call={el.in_out}
-                        date={el.date}
-                        avatar={el.person_avatar}
-                        number={el.to_number}
-                        source={el.source}
-                        time={el.time}
-                      />
-                    );
-                  })}
-              </TableName>
+
+            <TableName>
+              {data
+                .filter((el) =>
+                  searcher === ""
+                    ? el
+                    : el.to_number.includes(
+                        searcher.slice(1, 2) + searcher.slice(3, 7),
+                      ),
+                )
+                .map((el) => {
+                  return (
+                    <Table
+                      key={el.id}
+                      call={el.in_out}
+                      date={el.date}
+                      avatar={el.person_avatar}
+                      number={el.to_number}
+                      source={el.source}
+                      time={el.time}
+                    />
+                  );
+                })}
+            </TableName>
           </div>
         </div>
       </div>

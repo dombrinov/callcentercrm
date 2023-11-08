@@ -4,7 +4,7 @@ import s from "./inputPhoneNumber.module.scss";
 import { useRef } from "react";
 import { IMaskInput } from "react-imask";
 
-export const InputPhoneNumber = ({searcher, inputSearcher}) => {
+export const InputPhoneNumber = ({ searcher, inputSearcher }) => {
   const ref = useRef(null);
   const inputRef = useRef(null);
   const [isActive, setIsActive] = useState(false);
