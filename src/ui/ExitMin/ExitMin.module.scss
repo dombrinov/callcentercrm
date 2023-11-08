@@ -1,0 +1,17 @@
+.ui__selector{
+  cursor: url("../../ui/OperationDateTime/assets/курсор.svg"), pointer;
+  background-color: transparent;
+  border: none;
+  padding: 3px 2px;
+}
+.ui__selector__exit{
+    &:hover path {
+    fill: #002cfb;
+  }
+  &:active path {
+    fill: #274bc8;
+  }
+}
+.test {
+color: #002cfb;
+}

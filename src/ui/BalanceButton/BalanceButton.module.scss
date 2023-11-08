@@ -1,0 +1,41 @@
+.balanceButton {
+  display: flex;
+  width: 145px;
+  height: 40px;
+  padding: 8px 12px;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 48px;
+  background: #fff;
+  border: none;
+
+  color: #899cb1;
+  text-align: right;
+  font-family: SFProDisplay;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 148%; /* 20.72px */
+  cursor: pointer;
+}
+.balanceButton:hover path {
+  fill: #0024cb;
+}
+.spanBalanceButton {
+  color: #122945;
+  font-family: SFProDisplay;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 148%;
+}
+.spanBalanceButton:hover {
+  color: #0024cb;
+  font-family: SFProDisplay;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 148%;
+}

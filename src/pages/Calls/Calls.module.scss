@@ -1,0 +1,63 @@
+.flexPages {
+  display: flex;
+  flex-direction: column;
+}
+.flexCallsHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 64px;
+  background: #fff;
+  padding: 20px 120px;
+  color: #899cb1;
+  font-size: 15px;
+
+  /* тень */
+  box-shadow: 0px 4px 5px 0px #e9edf3;
+
+  font-family: SFProDisplay;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 148%; /* 20.72px */
+}
+.calls {
+  background: #f1f4f9;
+  padding: 20px 120px;
+  width: calc(100vw - 224px);
+}
+.callsButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  gap: 48px;
+  padding: 12px;
+}
+.dayDate {
+  color: #899cb1;
+  font-size: 15px;
+}
+.headerText {
+  color: #122945;
+  font-size: 14px;
+}
+.headerSpanCalls {
+  color: #00a775;
+  font-size: 14px;
+}
+.headerSpanQual {
+  color: #ffb800;
+  font-size: 14px;
+}
+.headerSpanCon {
+  color: #ea1a4f;
+  font-size: 14px;
+}
+.flexBar {
+  display: flex;
+  flex-direction: column;
+}
+.filtersAndInput {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

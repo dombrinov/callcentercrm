@@ -1,0 +1,75 @@
+.navigation {
+  max-width: 240px;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: top;
+  gap: 12px;
+  padding: 12px;
+
+  background: #091336;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: SFProDisplay;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+}
+.navigationItem {
+  max-width: 240px;
+  height: 52px;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  text-decoration: none;
+  align-items: center;
+  
+}
+.navigationItem:hover {
+  max-width: 240px;
+  height: 52px;
+  color: #fff;
+  font-family: SFProDisplay;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+}
+.navigationItem:visited {
+  max-width: 240px;
+  height: 52px;
+  color: #fff;
+  font-family: SFProDisplay;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+}
+.navigationItem:link {
+  max-width: 240px;
+  height: 52px;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: SFProDisplay;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+}
+.navdiv {
+  max-width: 240px;
+  height: 52px;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+.navdiv:hover {
+  max-width: 240px;
+  height: 52px;
+  color: #fff;
+  font-family: SFProDisplay;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+  background: rgba(216, 228, 251, 0.32);
+}

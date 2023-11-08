@@ -1,0 +1,74 @@
+.table__check{
+  padding-right: 12px;
+  opacity: 0;
+}
+
+.table__rows{
+  display: flex;
+justify-content: space-between;
+align-items: center;
+  background: #fff;
+  border-top: #EAF0FA solid 1px;
+  border-bottom: #EAF0FA solid 1px;
+  // max-width: 1300px;
+  height: 64px;
+  padding: 0 40px 0 12px;
+  &:hover{
+background-color: #EAF0FA;
+  }
+}
+.table__rows:hover .table__check{
+  padding-right: 12px;
+  opacity: 1;
+}
+
+.arrow{
+  padding-right: 32px;
+}
+.table__date{
+  padding-right: 48px;
+}
+.table__avatar{
+padding-right: 96px;
+&__img{
+border-radius: 30px;
+width: 32px;
+height: 32px;
+}
+}
+.table__number{
+  padding-right: 80px;
+  font-family: SFProDisplay;
+font-size: 15px;
+font-weight: 400;
+line-height: 21px;
+letter-spacing: 0em;
+text-align: left;
+color: #122945;
+width: 166px;
+}
+.table__source{
+font-family: SFProDisplay;
+font-size: 15px;
+font-weight: 400;
+line-height: 21px;
+letter-spacing: 0em;
+color: #5E7793;
+ padding-right: 153px;
+
+}
+.table__point{
+//  margin-right: 180px; 
+  display: flex;
+  width: 106px;
+  justify-content: space-between;
+}
+.table__time{
+font-family: SFProDisplay;
+font-size: 15px;
+font-weight: 400;
+line-height: 21px;
+letter-spacing: 0.01em;
+text-align: right;
+width: 98px;
+}
