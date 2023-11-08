@@ -15,7 +15,6 @@ export const Table = ({ key, call, date, avatar, number, source, time }) => {
     }
     return min + ":" + sec;
   }
-
   return (
     <tr key={key} className={s.table__rows}>
       <td className={s.table__check}>

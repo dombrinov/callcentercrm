@@ -5,11 +5,12 @@
 
 .table__rows{
   display: flex;
-  align-items: center;
+justify-content: space-between;
+align-items: center;
   background: #fff;
   border-top: #EAF0FA solid 1px;
   border-bottom: #EAF0FA solid 1px;
-  max-width: 1300px;
+  // max-width: 1300px;
   height: 64px;
   padding: 0 40px 0 12px;
   &:hover{
@@ -57,8 +58,10 @@ color: #5E7793;
 
 }
 .table__point{
- padding-right: 180px; 
+//  margin-right: 180px; 
   display: flex;
+  width: 106px;
+  justify-content: space-between;
 }
 .table__time{
 font-family: SFProDisplay;
@@ -67,4 +70,5 @@ font-weight: 400;
 line-height: 21px;
 letter-spacing: 0.01em;
 text-align: right;
+width: 98px;
 }

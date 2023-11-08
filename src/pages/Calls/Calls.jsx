@@ -33,6 +33,9 @@ export const Calls = () => {
     setData(calls);
   };
 
+  const [searcher, setSearcher] = useState("");
+  const inputSearcher = (e) => setSearcher(e.target.value);
+
   console.log(data);
   return (
     <Layout>
@@ -67,18 +70,21 @@ export const Calls = () => {
           </div>
           <div className={s.calls}>
             <div className={s.callsButton}>
-
-            
-
               <BalanceButton />
               <ButtonDate />
             </div>
             <div className={s.filtersAndInput}>
               <div>
-                <InputPhoneNumber />
+                <InputPhoneNumber
+                  inputSearcher={inputSearcher}
+                  searcher={searcher}
+                />
               </div>
               <div className={s.callsButton}>
-                <Dropdown variant={"All types"} showIncommingCalls={showIncommingCalls} />
+                <Dropdown
+                  variant={"All types"}
+                  showIncommingCalls={showIncommingCalls}
+                />
                 <Dropdown variant={"All employee"} />
                 <Dropdown variant={"All calls"} />
                 <Dropdown variant={"All sources"} />
@@ -86,9 +92,17 @@ export const Calls = () => {
                 <Dropdown variant={"All scores"} />
               </div>
             </div>
-            <div>
-              <TableName>
-                {data.map((el) => {
+
+            <TableName>
+              {data
+                .filter((el) =>
+                  searcher === ""
+                    ? el
+                    : el.to_number.includes(
+                        searcher.slice(1, 2) + searcher.slice(3, 7),
+                      ),
+                )
+                .map((el) => {
                   return (
                     <Table
                       key={el.id}
@@ -101,9 +115,7 @@ export const Calls = () => {
                     />
                   );
                 })}
-              </TableName>
-            </div>
-
+            </TableName>
           </div>
         </div>
       </div>
