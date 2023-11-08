@@ -6,11 +6,11 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 1300px;
   height: 64px;
   background: #fff;
-  padding: 14px auto;
-  padding-left: 120px;
+  padding: 20px 120px;
+  color: #899cb1;
+  font-size: 15px;
 
   /* тень */
   box-shadow: 0px 4px 5px 0px #e9edf3;
@@ -23,6 +23,7 @@
 .calls {
   background: #f1f4f9;
   padding: 20px 120px;
+  max-width: 1440px;
 }
 .callsButton {
   display: flex;
