@@ -19,27 +19,26 @@ import {
   dropTypes,
 } from "../../reduxStore/filterSlice";
 
-export const Dropdown = ({ variant, showIncommingCalls }) => {
+export const Dropdown = ({ variant, showCalls, title, dropTypesList }) => {
   // const [isShowed, setIsShowed] = useState(true);
   const [employeeName, setEmployeeName] = useState("Anna");
   const [orgs, setOrgs] = useState("ООО Грузчиков Сервис Запад");
+
   const isShowed = useSelector((state) => state.filter.filter.DropdownEmployee);
   const dropCallsList = useSelector(
-    (state) => state.filter.filter.DropdownCalls,
+    (state) => state.filter.filter.DropdownCalls
   );
   const dropErrrosList = useSelector(
-    (state) => state.filter.filter.DropdownErrors,
+    (state) => state.filter.filter.DropdownErrors
   );
   const dropScoresList = useSelector(
-    (state) => state.filter.filter.DropdownScores,
+    (state) => state.filter.filter.DropdownScores
   );
   const dropPeriodList = useSelector(
-    (state) => state.filter.filter.DropdownPeriod,
+    (state) => state.filter.filter.DropdownPeriod
   );
   const dropOrgsList = useSelector((state) => state.filter.filter.DropdownOrgs);
-  const dropTypesList = useSelector(
-    (state) => state.filter.filter.DropdownTypes.isOpened,
-  );
+
 
   useEffect(() => {
     setEmployeeName("John");
@@ -246,24 +245,29 @@ export const Dropdown = ({ variant, showIncommingCalls }) => {
       return (
         <div>
           <BtnFilter
-            text="Все типы"
+            text={title}
             buttonHandler={() => dispatch(dropTypes(dropTypesList))}
           />
           <div className={dropTypesList ? s.dropdownList : s.unvisible}>
             <div className={s.dropdownTitle}>Все типы</div>
             <div
               className={s.dropdownItem}
-              onClick={() => showIncommingCalls(1)}
+              onClick={() => showCalls(1, "Входящие")}
             >
               Входящие
             </div>
             <div
               className={s.dropdownItem}
-              onClick={() => showIncommingCalls(0)}
+              onClick={() => showCalls(0, "Исходящие")}
             >
               Исходящие
             </div>
-            <div className={s.dropdownItem}>Все звонки</div>
+            <div
+              className={s.dropdownItem}
+              onClick={() => showCalls(3, "Все звонки")}
+            >
+              Все звонки
+            </div>
           </div>
         </div>
       );
