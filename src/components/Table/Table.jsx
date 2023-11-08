@@ -15,30 +15,29 @@ export const Table = ({ key, call, date, avatar, number, source, time }) => {
     }
     return min + ":" + sec;
   }
-
   return (
     <tr key={key} className={s.table__rows}>
-      <td className={s.table__check}>
-        <InputCheckbox />
-      </td>
-      <td className={s.arrow}>
-        {call === 1 ? (
-          <Arrows variant={"incommingCall"} />
-        ) : (
-          <Arrows variant={"outgoingCall"} />
-        )}
-      </td>
-      <td className={s.table__date}>{date.slice(11, 16)}</td>
-      <td className={s.table__avatar}>
-        <img className={s.table__avatar__img} src={avatar} alt="" />
-      </td>
-      <td className={s.table__number}>{"+" + number}</td>
-      <td className={s.table__source}>
-        {source === "" ? "Rabota.ru" : source}
-      </td>
-      <td className={s.table__point}>
-        <Dots variant="Excellent" /> <Scores condition="Отлично" />{" "}
-      </td>
+        <td className={s.table__check}>
+          <InputCheckbox />
+        </td>
+        <td className={s.arrow}>
+          {call === 1 ? (
+            <Arrows variant={"incommingCall"} />
+          ) : (
+            <Arrows variant={"outgoingCall"} />
+          )}
+        </td>
+        <td className={s.table__date}>{date.slice(11, 16)}</td>
+        <td className={s.table__avatar}>
+          <img className={s.table__avatar__img} src={avatar} alt="" />
+        </td>
+        <td className={s.table__number}>{"+" + number}</td>
+        <td className={s.table__source}>
+          {source === "" ? "Rabota.ru" : source}
+        </td>
+        <td className={s.table__point}>
+          <Dots variant="Excellent" /> <Scores condition="Отлично" />{" "}
+        </td>
       <td className={s.table__time}>{time_convert(time)}</td>
     </tr>
   );
