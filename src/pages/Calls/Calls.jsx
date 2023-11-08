@@ -21,10 +21,10 @@ export const Calls = () => {
   const [calls, setCalls] = useState(3);
   const [title, setTitle] = useState("Все типы");
   const dropTypesList = useSelector(
-    (state) => state.filter.filter.DropdownTypes.isOpened
+    (state) => state.filter.filter.DropdownTypes.isOpened,
   );
 
-  const [now, setNow] = useState(new Date().toISOString())
+  const [now, setNow] = useState(new Date().toISOString());
   console.log(now);
   useEffect(() => {
     const getData = async (start, end) => {
@@ -45,49 +45,48 @@ export const Calls = () => {
 
   console.log(data);
 
-const [filterPeriod, setFilterPeriod] = useState("3 дня");
+  const [filterPeriod, setFilterPeriod] = useState("3 дня");
 
-const togglePeriodRight = (filterPeriod) => {
-  switch (filterPeriod) {
-    case "3 дня":
-      setFilterPeriod("Неделя");
-      break;
-    case "Неделя":
-      setFilterPeriod("Месяц");
-      break;
-    case "Месяц":
-      setFilterPeriod("Год");
-      break;
-    case "Год":
-      setFilterPeriod("3 дня");
-      break;
-    default:
-      setFilterPeriod("3 дня");
+  const togglePeriodRight = (filterPeriod) => {
+    switch (filterPeriod) {
+      case "3 дня":
+        setFilterPeriod("Неделя");
+        break;
+      case "Неделя":
+        setFilterPeriod("Месяц");
+        break;
+      case "Месяц":
+        setFilterPeriod("Год");
+        break;
+      case "Год":
+        setFilterPeriod("3 дня");
+        break;
+      default:
+        setFilterPeriod("3 дня");
 
-      return filterPeriod;
-  }
-};
-const togglePeriodLeft = (filterPeriod) => {
-  switch (filterPeriod) {
-    case "3 дня":
-      setFilterPeriod("Год");
-      break;
-    case "Год":
-      setFilterPeriod("Месяц");
-      break;
-    case "Месяц":
-      setFilterPeriod("Неделя");
-      break;
-    case "Неделя":
-      setFilterPeriod("3 дня");
-      break;
-    default:
-      setFilterPeriod("3 дня");
+        return filterPeriod;
+    }
+  };
+  const togglePeriodLeft = (filterPeriod) => {
+    switch (filterPeriod) {
+      case "3 дня":
+        setFilterPeriod("Год");
+        break;
+      case "Год":
+        setFilterPeriod("Месяц");
+        break;
+      case "Месяц":
+        setFilterPeriod("Неделя");
+        break;
+      case "Неделя":
+        setFilterPeriod("3 дня");
+        break;
+      default:
+        setFilterPeriod("3 дня");
 
-      return filterPeriod;
-  }
-};
-
+        return filterPeriod;
+    }
+  };
 
   return (
     <Layout>
@@ -151,7 +150,7 @@ const togglePeriodLeft = (filterPeriod) => {
               <TableName>
                 {data
                   .filter((item) =>
-                    calls === 3 ? item : item.in_out === calls
+                    calls === 3 ? item : item.in_out === calls,
                   )
                   .map((el) => {
                     return (

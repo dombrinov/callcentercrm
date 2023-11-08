@@ -10,8 +10,13 @@ const filterSlice = createSlice({
       DropdownScores: false,
       DropdownPeriod: false,
       DropdownOrgs: false,
-      DropdownTypes: { isOpened: false, title: "Все типы", itemIn: "Входящие", itemOut: "Исходящие", itemAll: "Все звонки" },
-      
+      DropdownTypes: {
+        isOpened: false,
+        title: "Все типы",
+        itemIn: "Входящие",
+        itemOut: "Исходящие",
+        itemAll: "Все звонки",
+      },
     },
   },
   reducers: {
