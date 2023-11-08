@@ -4,12 +4,13 @@ const filterSlice = createSlice({
   name: "filter",
   initialState: {
     filter: {
-      DropdownEmployee: { isOpen: false, value: "gl;dfkjgdfil" },
+      DropdownEmployee: false,
       DropdownCalls: false,
       DropdownErrors: false,
       DropdownScores: false,
       DropdownPeriod: false,
       DropdownOrgs: false,
+      DropdownTypes: {isOpened: false, text: 1}
     },
   },
   reducers: {
@@ -31,6 +32,9 @@ const filterSlice = createSlice({
     dropOrgs(state, action) {
       state.filter.DropdownOrgs = !state.filter.DropdownOrgs;
     },
+    dropTypes(state, action) {
+      state.filter.DropdownTypes.isOpened = !state.filter.DropdownTypes.isOpened;
+    },
   },
 });
 export const {
@@ -40,5 +44,6 @@ export const {
   dropScores,
   dropPeriod,
   dropOrgs,
+  dropTypes
 } = filterSlice.actions;
 export default filterSlice.reducer;

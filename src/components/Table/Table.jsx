@@ -28,7 +28,6 @@ export const Table = ({
   return (
     <tr key={key} className={s.table__rows}>
       <td className={s.table__check}>
-        {" "}
         <InputCheckbox />
       </td>
       <td className={s.arrow}>

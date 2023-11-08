@@ -10,13 +10,12 @@ import { InputPhoneNumber } from "../../ui/InputPhoneNumber/InputPhoneNumber";
 import GreenBar from "./assets/greenBar.svg";
 import { TableName } from "../../components/TableName/TableName.jsx";
 import { Table } from "../../components/Table/Table";
-import { InputCheckbox } from "../../ui/InputCheckbox/InputCheckbox.jsx";
 import { useAddProductMutation } from "../../reduxStore/ApiSlice.js";
 import { useEffect, useState } from "react";
 
 export const Calls = () => {
   const [addProduct] = useAddProductMutation();
-  const [data, setData] = useState("");
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     const getData = async (start, end) => {
@@ -24,12 +23,17 @@ export const Calls = () => {
         start: start,
         end: end,
       });
-      setData(data);
+      setData([...data.data.results]);
     };
     getData("20101011", "20241011");
   }, []);
-  console.log(data);
 
+  const showIncommingCalls = (type) => {
+    let calls = data.filter((el) => (el.in_out === type ? el : false));
+    setData(calls);
+  };
+
+  console.log(data);
   return (
     <Layout>
       <Navigation />
@@ -69,7 +73,10 @@ export const Calls = () => {
               <InputPhoneNumber />
             </div>
             <div className={s.callsButton}>
-              <Dropdown variant={"All types"} />
+              <Dropdown
+                variant={"All types"}
+                showIncommingCalls={showIncommingCalls}
+              />
               <Dropdown variant={"All employee"} />
               <Dropdown variant={"All calls"} />
               <Dropdown variant={"All sources"} />
@@ -79,7 +86,7 @@ export const Calls = () => {
           </div>
           <div>
             <TableName>
-              {data?.data?.results?.map((el) => {
+              {data.map((el) => {
                 return (
                   <Table
                     key={el.id}

@@ -16,26 +16,31 @@ import {
   dropScores,
   dropPeriod,
   dropOrgs,
+  dropTypes,
 } from "../../reduxStore/filterSlice";
 
-export const Dropdown = ({ variant }) => {
+export const Dropdown = ({ variant, showIncommingCalls }) => {
   // const [isShowed, setIsShowed] = useState(true);
   const [employeeName, setEmployeeName] = useState("Anna");
   const [orgs, setOrgs] = useState("ООО Грузчиков Сервис Запад");
   const isShowed = useSelector((state) => state.filter.filter.DropdownEmployee);
   const dropCallsList = useSelector(
-    (state) => state.filter.filter.DropdownCalls,
+    (state) => state.filter.filter.DropdownCalls
   );
   const dropErrrosList = useSelector(
-    (state) => state.filter.filter.DropdownErrors,
+    (state) => state.filter.filter.DropdownErrors
   );
   const dropScoresList = useSelector(
-    (state) => state.filter.filter.DropdownScores,
+    (state) => state.filter.filter.DropdownScores
   );
   const dropPeriodList = useSelector(
-    (state) => state.filter.filter.DropdownPeriod,
+    (state) => state.filter.filter.DropdownPeriod
   );
   const dropOrgsList = useSelector((state) => state.filter.filter.DropdownOrgs);
+  const dropTypesList = useSelector(
+    (state) => state.filter.filter.DropdownTypes.isOpened
+  );
+
   useEffect(() => {
     setEmployeeName("John");
   }, []);
@@ -176,7 +181,7 @@ export const Dropdown = ({ variant }) => {
             text="Все оценки"
             buttonHandler={() => dispatch(dropScores(dropScoresList))}
           />
-          <div className={dropScoresList ? s.dropdownlist : s.unvisible}>
+          <div className={dropScoresList ? s.dropdownList : s.unvisible}>
             <div className={s.dropdownTitle}>Все оценки</div>
             <div className={s.dropdownItem}>Распознать</div>
             <div className={s.dropdownItem}>Скрипт не использован</div>
@@ -242,10 +247,23 @@ export const Dropdown = ({ variant }) => {
         <div>
           <BtnFilter
             text="Все типы"
-            buttonHandler={() => dispatch(dropOrgs(dropOrgsList))}
+            buttonHandler={() => dispatch(dropTypes(dropTypesList))}
           />
-          <div className={dropOrgsList ? s.dropdownList : s.unvisible}>
+          <div className={dropTypesList ? s.dropdownList : s.unvisible}>
             <div className={s.dropdownTitle}>Все типы</div>
+            <div
+              className={s.dropdownItem}
+              onClick={() => showIncommingCalls(1)}
+            >
+              Входящие
+            </div>
+            <div
+              className={s.dropdownItem}
+              onClick={() => showIncommingCalls(0)}
+            >
+              Исходящие
+            </div>
+            <div className={s.dropdownItem}>Все звонки</div>
           </div>
         </div>
       );
