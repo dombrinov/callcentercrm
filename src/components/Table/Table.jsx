@@ -7,7 +7,6 @@ import { Scores } from "../../ui/Scores/Scores";
 import { InputCheckbox } from "../../ui/InputCheckbox/InputCheckbox";
 
 export const Table = ({
-  check,
   key,
   call,
   date,
