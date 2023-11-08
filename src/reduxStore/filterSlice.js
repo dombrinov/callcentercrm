@@ -10,7 +10,7 @@ const filterSlice = createSlice({
       DropdownScores: false,
       DropdownPeriod: false,
       DropdownOrgs: false,
-      DropdownTypes: {isOpened: false, text: 1}
+      DropdownTypes: { isOpened: false, text: 1 },
     },
   },
   reducers: {
@@ -33,7 +33,8 @@ const filterSlice = createSlice({
       state.filter.DropdownOrgs = !state.filter.DropdownOrgs;
     },
     dropTypes(state, action) {
-      state.filter.DropdownTypes.isOpened = !state.filter.DropdownTypes.isOpened;
+      state.filter.DropdownTypes.isOpened =
+        !state.filter.DropdownTypes.isOpened;
     },
   },
 });
@@ -44,6 +45,6 @@ export const {
   dropScores,
   dropPeriod,
   dropOrgs,
-  dropTypes
+  dropTypes,
 } = filterSlice.actions;
 export default filterSlice.reducer;

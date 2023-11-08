@@ -25,20 +25,20 @@ export const Dropdown = ({ variant, showIncommingCalls }) => {
   const [orgs, setOrgs] = useState("ООО Грузчиков Сервис Запад");
   const isShowed = useSelector((state) => state.filter.filter.DropdownEmployee);
   const dropCallsList = useSelector(
-    (state) => state.filter.filter.DropdownCalls
+    (state) => state.filter.filter.DropdownCalls,
   );
   const dropErrrosList = useSelector(
-    (state) => state.filter.filter.DropdownErrors
+    (state) => state.filter.filter.DropdownErrors,
   );
   const dropScoresList = useSelector(
-    (state) => state.filter.filter.DropdownScores
+    (state) => state.filter.filter.DropdownScores,
   );
   const dropPeriodList = useSelector(
-    (state) => state.filter.filter.DropdownPeriod
+    (state) => state.filter.filter.DropdownPeriod,
   );
   const dropOrgsList = useSelector((state) => state.filter.filter.DropdownOrgs);
   const dropTypesList = useSelector(
-    (state) => state.filter.filter.DropdownTypes.isOpened
+    (state) => state.filter.filter.DropdownTypes.isOpened,
   );
 
   useEffect(() => {
