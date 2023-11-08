@@ -21,7 +21,7 @@ export const Calls = () => {
   const [calls, setCalls] = useState(3);
   const [title, setTitle] = useState("Все типы");
   const dropTypesList = useSelector(
-    (state) => state.filter.filter.DropdownTypes.isOpened,
+    (state) => state.filter.filter.DropdownTypes.isOpened
   );
 
   const [now, setNow] = useState(new Date().toISOString());
@@ -144,8 +144,6 @@ export const Calls = () => {
                   showCalls={showCalls}
                   title={title}
                   dropTypesList={dropTypesList}
-                  showIncommingCalls={showIncommingCalls}
-
                 />
                 <Dropdown variant={"All employee"} />
                 <Dropdown variant={"All calls"} />
@@ -160,11 +158,11 @@ export const Calls = () => {
                   searcher === ""
                     ? el
                     : el.to_number.includes(
-                        searcher.slice(1, 2) + searcher.slice(3, 7),
-                      ),
-                ).filter((item) =>
-                    calls === 3 ? item : item.in_out === calls,
-                  ).map((el) => {
+                        searcher.slice(1, 2) + searcher.slice(3, 7)
+                      )
+                )
+                .filter((item) => (calls === 3 ? item : item.in_out === calls))
+                .map((el) => {
                   return (
                     <Table
                       key={el.id}
@@ -178,6 +176,7 @@ export const Calls = () => {
                   );
                 })}
             </TableName>
+          </div>
         </div>
       </div>
     </Layout>
