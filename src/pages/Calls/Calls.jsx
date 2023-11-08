@@ -15,7 +15,7 @@ import { DirectoriaDropButton } from "../../ui/DirectoriaDropButton/DirectoriaDr
 
 export const Calls = () => {
   const [addProduct] = useAddProductMutation();
-  const [data, setData] = useState("");
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     const getData = async (start, end) => {
@@ -23,12 +23,17 @@ export const Calls = () => {
         start: start,
         end: end,
       });
-      setData(data);
+      setData([...data.data.results]);
     };
     getData("20101011", "20241011");
   }, []);
-  console.log(data);
 
+  const showIncommingCalls = (type) => {
+    let calls = data.filter((el) => (el.in_out === type ? el : false));
+    setData(calls);
+  };
+
+  console.log(data);
   return (
     <Layout>
       <Navigation />
@@ -62,6 +67,9 @@ export const Calls = () => {
           </div>
           <div className={s.calls}>
             <div className={s.callsButton}>
+
+            
+
               <BalanceButton />
               <ButtonDate />
             </div>
@@ -70,7 +78,7 @@ export const Calls = () => {
                 <InputPhoneNumber />
               </div>
               <div className={s.callsButton}>
-                <Dropdown variant={"All types"} />
+                <Dropdown variant={"All types"} showIncommingCalls={showIncommingCalls} />
                 <Dropdown variant={"All employee"} />
                 <Dropdown variant={"All calls"} />
                 <Dropdown variant={"All sources"} />
@@ -80,7 +88,7 @@ export const Calls = () => {
             </div>
             <div>
               <TableName>
-                {data?.data?.results?.map((el) => {
+                {data.map((el) => {
                   return (
                     <Table
                       key={el.id}
@@ -95,6 +103,7 @@ export const Calls = () => {
                 })}
               </TableName>
             </div>
+
           </div>
         </div>
       </div>

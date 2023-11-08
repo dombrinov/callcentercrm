@@ -9,7 +9,6 @@ export const partnershipApi = createApi({
 
         url: `/mango/getList?date_start=${start}&date_end=${end}&limit=${1000}`,
 
-
         method: "POST",
         headers: {
           Authorization: "Bearer testtoken",
