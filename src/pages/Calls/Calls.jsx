@@ -13,7 +13,6 @@ import { useAddProductMutation } from "../../reduxStore/ApiSlice.js";
 import { useEffect, useState } from "react";
 import { DirectoriaDropButton } from "../../ui/DirectoriaDropButton/DirectoriaDropButton";
 
-
 export const Calls = () => {
   const [addProduct] = useAddProductMutation();
   const [data, setData] = useState("");
@@ -58,7 +57,7 @@ export const Calls = () => {
               <img src={GreenBar} alt="" />
             </div>
 
-            <p >ИП Сидорова Александра Михайловна</p>
+            <p>ИП Сидорова Александра Михайловна</p>
             <DirectoriaDropButton />
           </div>
           <div className={s.calls}>

@@ -1,8 +1,8 @@
-import s from "./Directoria.module.scss"
-import avatar from "./assets/avatar.svg"
-import ReactDom from "react-dom"
+import s from "./Directoria.module.scss";
+import avatar from "./assets/avatar.svg";
+import ReactDom from "react-dom";
 
-const portal = document.getElementById("portal")
+const portal = document.getElementById("portal");
 
 export const Directoria = () => {
   return ReactDom.createPortal(
@@ -81,9 +81,7 @@ export const Directoria = () => {
           {" "}
           Операторы
           <li>
-            
-              <img src={avatar} alt="" />
-           
+            <img src={avatar} alt="" />
             Мирон Батонов
           </li>
           <li>
@@ -136,6 +134,6 @@ export const Directoria = () => {
         </ul>
       </div>
     </div>,
-    portal
-  ); 
+    portal,
+  );
 };

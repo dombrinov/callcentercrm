@@ -6,15 +6,7 @@ import { Dots } from "../../ui/Dots/Dots";
 import { Scores } from "../../ui/Scores/Scores";
 import { InputCheckbox } from "../../ui/InputCheckbox/InputCheckbox";
 
-export const Table = ({
-  key,
-  call,
-  date,
-  avatar,
-  number,
-  source,
-  time,
-}) => {
+export const Table = ({ key, call, date, avatar, number, source, time }) => {
   function time_convert(num) {
     var min = Math.floor(num / 60);
     var sec = num % 60;
