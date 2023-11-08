@@ -23,7 +23,7 @@
 .calls {
   background: #f1f4f9;
   padding: 20px 120px;
-  max-width: 1440px;
+  width: calc(100vw - 224px);
 }
 .callsButton {
   display: flex;

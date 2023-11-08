@@ -43,6 +43,9 @@ export const Calls = () => {
     dispatch(dropTypes(dropTypesList));
   };
 
+  const [searcher, setSearcher] = useState("");
+  const inputSearcher = (e) => setSearcher(e.target.value);
+
   console.log(data);
 
   const [filterPeriod, setFilterPeriod] = useState("3 дня");
@@ -130,7 +133,10 @@ export const Calls = () => {
             </div>
             <div className={s.filtersAndInput}>
               <div>
-                <InputPhoneNumber />
+                <InputPhoneNumber
+                  inputSearcher={inputSearcher}
+                  searcher={searcher}
+                />
               </div>
               <div className={s.callsButton}>
                 <Dropdown
@@ -138,6 +144,8 @@ export const Calls = () => {
                   showCalls={showCalls}
                   title={title}
                   dropTypesList={dropTypesList}
+                  showIncommingCalls={showIncommingCalls}
+
                 />
                 <Dropdown variant={"All employee"} />
                 <Dropdown variant={"All calls"} />
@@ -146,28 +154,30 @@ export const Calls = () => {
                 <Dropdown variant={"All scores"} />
               </div>
             </div>
-            <div>
-              <TableName>
-                {data
-                  .filter((item) =>
+            <TableName>
+              {data
+                .filter((el) =>
+                  searcher === ""
+                    ? el
+                    : el.to_number.includes(
+                        searcher.slice(1, 2) + searcher.slice(3, 7),
+                      ),
+                ).filter((item) =>
                     calls === 3 ? item : item.in_out === calls,
-                  )
-                  .map((el) => {
-                    return (
-                      <Table
-                        key={el.id}
-                        call={el.in_out}
-                        date={el.date}
-                        avatar={el.person_avatar}
-                        number={el.to_number}
-                        source={el.source}
-                        time={el.time}
-                      />
-                    );
-                  })}
-              </TableName>
-            </div>
-          </div>
+                  ).map((el) => {
+                  return (
+                    <Table
+                      key={el.id}
+                      call={el.in_out}
+                      date={el.date}
+                      avatar={el.person_avatar}
+                      number={el.to_number}
+                      source={el.source}
+                      time={el.time}
+                    />
+                  );
+                })}
+            </TableName>
         </div>
       </div>
     </Layout>
